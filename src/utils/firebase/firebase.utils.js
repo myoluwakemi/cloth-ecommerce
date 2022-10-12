@@ -3,8 +3,8 @@ import { initializeApp} from 'firebase/app'
 import {getDoc, doc, setDoc, getFirestore} from 'firebase/firestore'
 import {
     getAuth, 
-    signInWithPopup, 
-    signInWithRedirect, 
+    signInWithPopup,
+    createUserWithEmailAndPassword,
     GoogleAuthProvider} 
     from 'firebase/auth'
 
@@ -30,10 +30,12 @@ provider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+// export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider)
 
 export const db = getFirestore()
 
-export const createUserDocumentFromAuth = async (userAuth) => {
+export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {
+    if(!userAuth) return
     //takes 3 arguement, 1: the initialize db 2: the name we wanna call our collection
     //3: we need a unique id that we have access to, that is gotten from the user object
     const userDocRef = doc(db, 'users', userAuth.uid )
@@ -53,7 +55,8 @@ export const createUserDocumentFromAuth = async (userAuth) => {
             await setDoc(userDocRef, {
                 displayName,
                 email,
-                createdAt
+                createdAt,
+                ...additionalInfo
             })
         } catch(error){
             console.log(`error creating user ${error}`)
@@ -65,3 +68,8 @@ export const createUserDocumentFromAuth = async (userAuth) => {
     //return userDocRef
     return userDocRef
 } 
+
+export const createAuthWithEmailandPassword =  async (email, password)=> {
+    if(!email || !password) return
+   return await createUserWithEmailAndPassword(auth, email, password)
+}
