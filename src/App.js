@@ -1,35 +1,14 @@
-import "./categories.styles.scss";
-import CategoryMenu from "./components/category-menu/category-menu.component";
-const directory = [
-  {
-    id: 1,
-    title: "hats",
-    imageUrl: "https://i.ibb.co/cvpntL1/hats.png"
-  },
-  {
-    id: 2,
-    title: "jackets",
-    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png"
-  },
-  {
-    id: 3,
-    title: "sneakers",
-    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png"
-  },
-  {
-    id: 4,
-    title: "womens",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png"
-  },
-  {
-    id: 5,
-    title: "mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png"
-  }
-];
+import { Route, Routes } from "react-router-dom";
+import Home from "./routes/home/home.component";
+import Navigation from "./routes/Navigation/navigation.component";
 
 const App = () => (
-  <CategoryMenu directory={directory}/>
+  <Routes>
+    <Route path="/" element={<Navigation/>}>
+    <Route index element={<Home/>}/>
+    </Route>
+  </Routes>
+ 
 );
 
 export default App;
