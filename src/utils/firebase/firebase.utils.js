@@ -3,9 +3,11 @@ import { initializeApp} from 'firebase/app'
 import {getDoc, doc, setDoc, getFirestore} from 'firebase/firestore'
 import {
     getAuth, 
+    signOut,
     signInWithPopup,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
+    onAuthStateChanged,
     GoogleAuthProvider} 
     from 'firebase/auth'
 
@@ -40,10 +42,8 @@ export const createUserDocumentFromAuth = async (userAuth, additionalInfo) => {
     //takes 3 arguement, 1: the initialize db 2: the name we wanna call our collection
     //3: we need a unique id that we have access to, that is gotten from the user object
     const userDocRef = doc(db, 'users', userAuth.uid )
-    console.log(userDocRef)
     const userSnapShot = await getDoc(userDocRef)
-    console.log(userSnapShot)
-    console.log(userSnapShot.exists())
+
 
     //pseudo code
     //if user data does not exit
@@ -79,3 +79,8 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   
     return await signInWithEmailAndPassword(auth, email, password);
   };
+
+  export const signOutUser = async() => await signOut(auth)
+
+  export const onAuthStateChangedListener =(callback) => 
+  onAuthStateChanged(auth, callback)

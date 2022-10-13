@@ -4,7 +4,6 @@ import FormInput from '../form-input/form-input.component';
 import Button from '../button/button.component';
 
 import {
-  createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword
   
@@ -21,26 +20,28 @@ const defaultFormFields = {
 const SignInForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
-  console.log(formFields)
 
+//reseting input fields
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
 
+  //sign in with google popup from firebase
   const signInWithGoogle = async () => {
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+     await signInWithGooglePopup();
+   
   };
 
+// handle when user wants to sign in with already created account
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const {user} = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+      
       resetFormFields();
     } catch (error) {
       switch (error.code) {
@@ -56,6 +57,7 @@ const SignInForm = () => {
     }
   };
 
+  //track the changes in the input field
   const handleChange = (event) => {
     const { name, value } = event.target;
 
