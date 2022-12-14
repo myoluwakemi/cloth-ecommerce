@@ -1,0 +1,39 @@
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+.ecommerce-header-items {
+    display: flex;
+    justify-content: space-between;
+
+    .result-toggler {
+        display: flex;
+        align-items: center;
+
+        // Sidebar toggler
+        .shop-sidebar-toggler {
+            padding-left: 0;
+
+            &:active,
+            &:focus {
+                outline: 0;
+            }
+
+            .navbar-toggler-icon {
+                height: auto;
+
+                i,
+                svg {
+                    color: $body-color;
+                    height: 1.5rem;
+                    width: 1.5rem;
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
+        // Search result title
+        .search-results {
+            font-weight: $font-weight-bold;
+            color: $headings-color;
+        }
+    }
+}

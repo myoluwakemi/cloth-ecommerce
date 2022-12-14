@@ -1,14 +1,21 @@
-*{
+* {
   box-sizing: border-box;
+}
+html{
+  height: 100%;
 }
 body {
   margin: 0;
-  padding: 20px 40px;
-     font-family: 'Open Sans', sans-serif;
+  padding: 0;
+  height: 100%;
+  direction: ltr;
+  background-color: #f8f8f8;
+  font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-a{
+a {
   text-decoration: none;
   color: #000;
 }
+
