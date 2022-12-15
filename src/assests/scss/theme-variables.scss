@@ -1,0 +1,51 @@
+$themes: (
+  light: (
+    "text": dodgerblue,
+    "bodyBackgroundColor": #fff,
+    "wrapperBackgroundColor": #f8f8f8,
+    "navbarBackdrop": linear-gradient(180deg,
+        rgba(248, 248, 248, 0.95) 44%,
+        rgba(248, 248, 248, 0.46) 73%,
+        rgba(255, 255, 255, 0))
+  ),
+  dark: (
+    "text": white,
+    "bodyBackgroundColor": #283045,
+    "wrapperBackgroundColor": #161d31,
+    "navbarBackdrop": linear-gradient(180deg, rgba(22, 29, 49, 0.9) 44%, rgba(22, 29, 49, 0.43) 73%, rgba(22, 29, 49, 0))
+  ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    .theme-#{$theme} {
+      $theme-map: () !global;
+
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value,
+          )
+        ) !global;
+      }
+
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+@mixin themed {
+  @include themify($themes) {
+    $text: themed("text") !global;
+    $back: themed("bodyBackgroundColor") !global;
+    $wrapper: themed("wrapperBackgroundColor") !global;
+    $backdrop: themed("navbarBackdrop") !global;
+    @content;
+  }
+}

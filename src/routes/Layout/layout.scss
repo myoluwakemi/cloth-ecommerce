@@ -1,42 +1,45 @@
-.wrapper {
-  background-color: #f8f8f8;
-  height: 100vh;
+@import "../../assests/scss/theme-variables.scss";
+
+.sidebar {
+  position: fixed;
+  width: 260px;
+  transform: translate3d(0, 0, 0);
+  transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0s;
   backface-visibility: hidden;
+  box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
+  height: 100%;
+  top: 0;
+  z-index: 20;
+}
+@include themed {
   .sidebar {
-    position: fixed;
-    width: 260px;
-    transform: translate3d(0, 0, 0);
-    transition: 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background 0s;
-    backface-visibility: hidden;
-    box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
-    background: #fff;
-    height: 100%;
-    top: 0;
+    background: $back;
   }
-  .content {
-    position: relative;
-    transition: 300ms ease all;
-    backface-visibility: hidden;
-    padding: calc(2rem + 4.45rem + 1.3rem) 2rem 0;
-    margin-left: 260px;
-    overflow: hidden;
-    min-height: calc(100% - 3.35rem);
-    .header-navbar-shadow {
-      background: linear-gradient(
-        180deg,
-        rgba(248, 248, 248, 0.95) 44%,
-        rgba(248, 248, 248, 0.46) 73%,
-        rgba(255, 255, 255, 0)
-      );
-      left: 0;
-      padding-top: 2.2rem;
-      display: block;
-      width: 100%;
-      height: 102px;
-      position: fixed;
-      top: 0;
-      z-index: 11;
-    }
+}
+
+.content {
+  position: relative;
+  transition: 300ms ease all;
+  backface-visibility: hidden;
+  padding: calc(2rem + 4.45rem + 1.3rem) 2rem 0;
+  margin-left: 260px;
+  overflow: hidden;
+  min-height: calc(100% - 3.35rem);
+
+  .header-navbar-shadow {
+    left: 0;
+    padding-top: 2.2rem;
+    display: block;
+    width: 100%;
+    height: 102px;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+  }
+}
+@include themed {
+  .header-navbar-shadow {
+    background: $backdrop;
   }
 }
 .navbar {
@@ -51,6 +54,11 @@
   width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 260px);
   z-index: 12;
   min-height: 4.45rem;
+}
+@include themed {
+  .navbar {
+    background: $back;
+  }
 }
 .navigation {
   height: 100%;

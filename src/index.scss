@@ -1,3 +1,4 @@
+@import './assests/scss/theme-variables.scss';
 * {
   box-sizing: border-box;
 }
@@ -9,13 +10,22 @@ body {
   padding: 0;
   height: 100%;
   direction: ltr;
-  background-color: #f8f8f8;
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 a {
   text-decoration: none;
   color: #000;
+}
+.wrapper {
+  height: 100vh;
+  backface-visibility: hidden;
+}
+@include themed {
+  .wrapper {
+    background: $wrapper;
+  }
 }
 
