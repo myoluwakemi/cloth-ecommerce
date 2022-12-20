@@ -1,18 +1,33 @@
 $themes: (
   light: (
-    "text": dodgerblue,
+    "text": #625f6e,
     "bodyBackgroundColor": #fff,
     "wrapperBackgroundColor": #f8f8f8,
-    "navbarBackdrop": linear-gradient(180deg,
+    "navbarBackdrop":
+      linear-gradient(
+        180deg,
         rgba(248, 248, 248, 0.95) 44%,
         rgba(248, 248, 248, 0.46) 73%,
-        rgba(255, 255, 255, 0))
+        rgba(255, 255, 255, 0)
+      ),
+    "autoFillBg": #fff,
+    "autoFillColor": #6e6b7b,
+    "borderColor" : #d8d6de,
   ),
   dark: (
-    "text": white,
+    "text": #d0d2d6,
     "bodyBackgroundColor": #283045,
     "wrapperBackgroundColor": #161d31,
-    "navbarBackdrop": linear-gradient(180deg, rgba(22, 29, 49, 0.9) 44%, rgba(22, 29, 49, 0.43) 73%, rgba(22, 29, 49, 0))
+    "navbarBackdrop":
+      linear-gradient(
+        180deg,
+        rgba(22, 29, 49, 0.9) 44%,
+        rgba(22, 29, 49, 0.43) 73%,
+        rgba(22, 29, 49, 0)
+      ),
+    "autoFillBg": #283046,
+    "autoFillColor": #b4b7bd,
+        "borderColor" : #404656,
   ),
 );
 
@@ -46,6 +61,9 @@ $themes: (
     $back: themed("bodyBackgroundColor") !global;
     $wrapper: themed("wrapperBackgroundColor") !global;
     $backdrop: themed("navbarBackdrop") !global;
+    $autofillbg: themed("autoFillBg") !global;
+    $autofillColor: themed("autoFillColor") !global;
+    $borderColor: themed("borderColor") !global;
     @content;
   }
 }

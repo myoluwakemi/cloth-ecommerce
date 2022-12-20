@@ -1,8 +1,8 @@
-@import './assests/scss/theme-variables.scss';
+@import "./assests/scss/theme-variables.scss";
 * {
   box-sizing: border-box;
 }
-html{
+html {
   height: 100%;
 }
 body {
@@ -14,18 +14,56 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+p {
+  font-size: 0.857rem;
+  line-height: 1.5rem;
+}
 
 a {
   text-decoration: none;
-  color: #000;
+  color: #000 !important;
 }
 .wrapper {
   height: 100vh;
   backface-visibility: hidden;
 }
+.is-invalid {
+  border-color: red !important;
+}
+.btn-primary {
+  background: linear-gradient(to right, #614385, #516395) !important;
+  color: #fff !important;
+  font-weight: bold !important;
+}
+.form-control {
+  padding: 0.571rem 1rem;
+  background-color: #fff;
+  background-clip: padding-box;
+
+  border-radius: 0.357rem;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  border-color: #7367f0;
+  box-shadow: 0 3px 10px 0 rgb(34 41 47 / 10%);
+}
 @include themed {
   .wrapper {
     background: $wrapper;
   }
+  .form-control {
+    border: 1px solid $borderColor;
+  }
+  input:-webkit-autofill,
+  .textarea:-webkit-autofill,
+  .select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px $autofillbg inset !important;
+    -webkit-text-fill-color: $autofillColor !important;
+  }
+  .input-group .input-group-text {
+    background-color: $autofillbg;
+    border-color: $borderColor;
+    color: $text;
+  }
 }
-

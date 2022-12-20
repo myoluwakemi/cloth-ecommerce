@@ -6,13 +6,16 @@ import Layout from "./routes/Layout";
 import Shop from "./routes/Shop/shop.component";
 import Authentication from "./routes/authentication/authentication.components";
 import CheckOut from "./routes/checkout/checkout.component";
+import Login from "./routes/Login";
+import Register from "./routes/Register";
 
 const App = () => {
-  const isBrowserDefaulDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const isBrowserDefaulDark = () =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   const getDefaultTheme = () => {
-    const localStorageTheme = localStorage.getItem('default-theme');
-    const browserDefault = isBrowserDefaulDark() ? 'dark' : 'light';
+    const localStorageTheme = localStorage.getItem("default-theme");
+    const browserDefault = isBrowserDefaulDark() ? "dark" : "light";
     return localStorageTheme || browserDefault;
   };
 
@@ -20,20 +23,20 @@ const App = () => {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={`theme-${theme}`}>
-   
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="shop" element={<Shop />} />
-          <Route path="checkout" element={<CheckOut />} />
-          <Route path="auth" element={<Authentication />} />
-        </Route>
-      </Routes>
-      </div>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="shop" element={<Shop />} />
+            <Route path="checkout" element={<CheckOut />} />
 
-  </ThemeContext.Provider>
-  )
-  
-  };
+            <Route path="auth" element={<Authentication />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </ThemeContext.Provider>
+  );
+};
 
 export default App;
