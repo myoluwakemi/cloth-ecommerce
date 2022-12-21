@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
+
 //** third party components */
 import {
   CardTitle,
@@ -10,12 +12,15 @@ import {
 } from "reactstrap";
 import { Mail } from "react-feather";
 
+
 // **
 
-
-
-
 const AuthWrapper= ({title, subText, children, acctStatus, acctToCreate}) => {
+
+  const signInWithGoogle = async (e) => {
+    e.preventDefault()
+    await signInWithGooglePopup()
+  }
   return (
     <div className="wrapper">
       <div className="auth-wrapper auth-basic px-2">
@@ -42,7 +47,7 @@ const AuthWrapper= ({title, subText, children, acctStatus, acctToCreate}) => {
             </div>
              <div className='auth-footer-btn d-flex justify-content-center'>
              
-              <Button color='google' >
+              <Button color='google'  onClick={signInWithGoogle}>
                 <Mail color="white"  size={14} />
               </Button>
               
