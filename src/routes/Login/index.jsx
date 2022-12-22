@@ -80,7 +80,7 @@ const Login = () => {
             <Label className="form-label" for="login-password">
               Password
             </Label>
-            <Link to="/" className="to-forgotp">
+            <Link to="/register" className="to-forgotp">
               <small>Forgot Password?</small>
             </Link>
           </div>
