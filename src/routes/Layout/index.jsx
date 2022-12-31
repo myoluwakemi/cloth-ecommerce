@@ -29,7 +29,7 @@ const Layout = () => {
   };
   return (
     <div className="wrapper">
-      <div className="sidebar">
+      <div className="main-menu">
         <Link className="logo-container" to="/">
           <CrwnLogo className="logo" />
         </Link>

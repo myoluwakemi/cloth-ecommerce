@@ -1,6 +1,6 @@
 @import "../../assests/scss/theme-variables.scss";
 
-.sidebar {
+.main-menu {
   position: fixed;
   width: 260px;
   transform: translate3d(0, 0, 0);
@@ -12,7 +12,7 @@
   z-index: 20;
 }
 @include themed {
-  .sidebar {
+  .main-menu {
     background: $back;
   }
 }

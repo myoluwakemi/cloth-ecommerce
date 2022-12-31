@@ -1,5 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-
+ 
 export const CartContext = createContext({
   isCartOpen: false,
   setIsCartOpen: () => {},
@@ -33,7 +33,6 @@ export const CartProvider = ({ children }) => {
 
 
   //reduce takes two arguement, 1: callback 2: starting value
-
   useEffect(()=> {
     const newCartCount = cartItems.reduce((total, cartItem)=> total + cartItem.quantity, 0)
     setCartCount(newCartCount)

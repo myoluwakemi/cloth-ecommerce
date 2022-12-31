@@ -9,6 +9,7 @@ import { CartProvider } from "./contexts/cart.content";
 
 import "./index.scss";
 import './assests/scss/main.scss'
+import './assests/scss/sidebar.scss'
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
