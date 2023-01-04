@@ -1,8 +1,9 @@
-import { Fragment, useContext , useState} from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Fragment, useContext, useState } from "react";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/cart.content";
 
 import { ThemeContext } from "../../contexts/theme-context";
+import { UserCheck, ShoppingBag } from "react-feather";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -14,14 +15,19 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 import "./layout.scss";
 import MobileSidebar from "../../components/MobileSidebar/indej";
 
-
 const Layout = () => {
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
 
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const [ showSidebar, setShowSidebar ] = useState(false);
+  const navigate = useNavigate();
+
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const gotoAuth = () => {
+    navigate("/login");
+  };
 
   const handleThemeChange = () => {
     const isCurrentDark = theme === "dark";
@@ -42,18 +48,21 @@ const Layout = () => {
           </Link>
           <div className="nav-links-container">
             <Link className="nav-link" to="shop">
-              SHOP
+              <ShoppingBag className="nav-icon" />
+              <span>shop</span>
             </Link>
             {currentUser ? (
-              <span className="nav-link" onClick={handleSignOut}>
-                SIGN OUT
-              </span>
+              <div className="nav-link" onClick={handleSignOut}>
+                <UserCheck className="nav-icon" />
+                <span>SIGN OUT</span>
+              </div>
             ) : (
-              <Link className="nav-link" to="auth">
-                SIGN-IN
-              </Link>
+              <div className="nav-link" onClick={gotoAuth}>
+                <UserCheck className="nav-icon" />
+                <span>Sign in</span>
+              </div>
             )}
-            <CartIcon />
+            {/* <CartIcon /> */}
           </div>
         </div>
         <div className="content">
