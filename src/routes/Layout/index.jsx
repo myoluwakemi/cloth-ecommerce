@@ -1,9 +1,10 @@
 import { Fragment, useContext, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/cart.content";
 
 import { ThemeContext } from "../../contexts/theme-context";
-import { UserCheck, ShoppingBag } from "react-feather";
+import { UserCheck, ShoppingBag, Menu, Sun, Moon } from "react-feather";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -14,8 +15,10 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 
 import "./layout.scss";
 import MobileSidebar from "../../components/MobileSidebar/indej";
+import IntLDropdown from "./IntlDropDown";
 
 const Layout = () => {
+  const { t } = useTranslation();
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
 
@@ -67,27 +70,22 @@ const Layout = () => {
         </div>
         <div className="content">
           <div className="navbar">
-            <div className="navigation">{isCartOpen && <CartDropdown />}</div>
-            <button onClick={toggleSidebar}>d</button>
-            <div className="toggle-btn-section">
-              <div className={`toggle-checkbox m-vertical-auto`}>
-                <input
-                  className="toggle-btn__input"
-                  type="checkbox"
-                  name="checkbox"
-                  onChange={handleThemeChange}
-                  checked={theme === "light"}
-                />
-                <button
-                  type="button"
-                  className={`toggle-btn__input-label`}
-                  onClick={handleThemeChange}
-                ></button>
+            {/* <div className="">{isCartOpen && <CartDropdown />}</div> */}
+            <Menu onClick={toggleSidebar} className="header-menu-toggler" />
+            <div className="header-right-side">
+              <IntLDropdown />
+              <div className="toggle-btn-section">
+                {theme === "light" ? (
+                  <Sun onClick={handleThemeChange} />
+                ) : (
+                  <Moon onClick={handleThemeChange} />
+                )}
               </div>
             </div>
           </div>
           <div className="header-navbar-shadow"></div>
           <main className="routes-wrapper">
+            <h1>{t("Welcome")}</h1>
             <Outlet />
           </main>
         </div>

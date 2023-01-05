@@ -11,38 +11,29 @@
   top: 0;
   z-index: 20;
   padding: 1.5rem 1rem;
-  
-
 }
-.nav-links-container{
+.nav-links-container {
   margin-top: 2rem;
- 
-  .nav-link{
+
+  .nav-link {
     display: flex;
     align-items: center;
     padding: 15px 10px;
     margin-bottom: 1rem;
 
-
-    &:hover{
+    &:hover {
       box-shadow: 0 0 10px 1px rgb(115 103 240 / 70%);
-        border-radius: 4px;
-        background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
-        color: #fff !important;
-      
+      border-radius: 4px;
+      background: linear-gradient(118deg, #7367f0, rgba(115, 103, 240, 0.7));
+      color: #fff !important;
+      transition: transform 0.25s ease;
     }
-    .nav-icon{
+    .nav-icon {
       margin-right: 1.4rem;
-      
     }
-    span{
+    span {
       text-transform: capitalize;
-      
     }
-
-
-  
-    
   }
 }
 @include themed {
@@ -87,7 +78,41 @@
   top: 0;
   width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 260px);
   z-index: 12;
-  min-height: 4.45rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem !important;
+  min-height: 3.5rem;
+  .header-right-side {
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-language {
+    .selected-languaage {
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .country-flag {
+      margin-right: 0.4rem;
+    }
+
+    .nav-link {
+    }
+    .dropdown-menu {
+      span {
+        font-size: 13px;
+      }
+    }
+
+    .dropdown-menu .dropdown-item {
+      margin-top: 1rem;
+      .flag-icon {
+        margin-right: 0.7rem;
+      }
+    }
+  }
+  .header-menu-toggler {
+    visibility: hidden;
+  }
 }
 @include themed {
   .navbar {
@@ -123,9 +148,6 @@
     }
   }
 }
-
-@import "../../assests/scss/theme-variables.scss";
-
 .auth-wrapper {
   display: flex;
   flex-basis: 100%;
@@ -223,7 +245,7 @@
 
 @include themed {
   .auth-card {
-    background-color: $back  !important;
+    background-color: $back !important;
     color: $text;
 
     .card-title {
@@ -232,8 +254,23 @@
   }
 }
 
-@include themed{
+@include themed {
   .nav-link {
     color: $text;
+  }
+}
+@media (max-width: 1200px) {
+  .main-menu {
+    display: none;
+  }
+  .content {
+    margin-left: 0;
+  }
+  .navbar {
+    top: 0;
+    width: calc(100vw - (100vw - 100%) - calc(2rem * 2) - 0px);
+    .header-menu-toggler {
+      visibility: visible;
+    }
   }
 }

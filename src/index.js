@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
+import './configs/i18n'
 import { UserProvider } from "./contexts/user.context";
 import { ProductProvider } from "./contexts/product.context";
 import { CartProvider } from "./contexts/cart.content";
