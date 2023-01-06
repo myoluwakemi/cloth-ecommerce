@@ -16,7 +16,6 @@ body {
 }
 .product-content{
   display: flex;
-  
 }
 p {
   font-size: 0.857rem;
@@ -118,7 +117,6 @@ a {
       display: flex;
       justify-content: space-between;
       margin-bottom: 0.5rem;
-
       &:last-child {
         margin-bottom: 2.5rem;
       }
@@ -225,6 +223,7 @@ a {
     .item-rating {
       ul {
         margin-bottom: 0;
+        display: flex;
       }
 
       svg,
@@ -254,8 +253,17 @@ a {
     }
 
     // buttons style
-    .btn-wishlist,
     .btn-cart {
+    border-radius: 0;
+      display: flex;
+      width: 30px;
+      height: 30px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+     background:  linear-gradient(to right, #614385, #516395) !important ;
+      color: #fff !important;
+
       span {
         vertical-align: text-top;
       }
@@ -292,6 +300,9 @@ a {
 
     .ecommerce-card {
       overflow: hidden;
+      margin-bottom: 1.5rem;
+      border-radius: 16px;
+      
 
       // Item Image
       .item-img {
@@ -318,11 +329,17 @@ a {
       .item-options {
         display: flex;
         flex-wrap: wrap;
+        margin: 1rem;
+        align-items: center;
+        justify-content: space-between;
+        .item-wrapper{
+          display: none;
+        }
 
         .btn-cart,
         .btn-wishlist {
-          flex-grow: 1;
-          border-radius: 0;
+          // flex-grow: 1;
+          // border-radius: 0;
         }
       }
 
@@ -421,6 +438,9 @@ a {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        .grid-item-price{
+          display: none;
+        }
 
         .item-wrapper {
           position: relative;
@@ -692,8 +712,6 @@ a {
   .product-content{
     display: unset;
   }
-  
-
     // Grid View
     .grid-view,
     .grid-view.wishlist-items {
@@ -708,6 +726,9 @@ a {
 @include themed {
   .wrapper {
     background: $wrapper;
+  }
+  .card{
+    background: $back;
   }
   .form-control {
     border: 1px solid $borderColor;

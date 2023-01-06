@@ -8,7 +8,7 @@ import { Star, ShoppingCart, Heart } from "react-feather";
 
 const Product = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);
-  const { name, price, imageUrl } = product;
+  const { name, price, imageUrl, description } = product;
   const addProductToCart = () => addItemToCart(product);
   return (
     <Card className="ecommerce-card">
@@ -19,20 +19,18 @@ const Product = ({ product }) => {
       </div>
       <CardBody>
         <div className="item-wrapper">
-          <div className="item-rating">
-            <ul className="unstyled-list list-inline">
-              {new Array(5).fill().map((listItem, index) => {
-                return (
-                  <li key={index} className="ratings-list-item me-25">
-                    <Star />
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-          <div className="item-cost">
-            <h6 className="item-price">${price}</h6>
-          </div>
+          {/* <div className="item-rating">
+                  <ul className="unstyled-list list-inline">
+                    {new Array(5).fill().map((listItem, index) => {
+                      return (
+                        <li key={index} className="ratings-list-item me-25">
+                          <Star />
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div> */}
+         
         </div>
         <h6 className="item-name">
           <Link className="text-body" to={`/apps/ecommerce/product-detail/`}>
@@ -49,7 +47,7 @@ const Product = ({ product }) => {
             </a>
           </CardText>
         </h6>
-        <CardText className="item-description">kkll</CardText>
+        <CardText className="item-description">{description}</CardText>
       </CardBody>
       <div className="item-options text-center">
         <div className="item-wrapper">
@@ -57,20 +55,17 @@ const Product = ({ product }) => {
             <h4 className="item-price">${price}</h4>
           </div>
         </div>
-        <Button className="btn-wishlist" color="light">
-          <Heart size={14} />
-          <span>Wishlist</span>
-        </Button>
-        <Button
-          color="primary"
+         <div className="item-cost">
+            <h6 className="grid-item-price">${price}</h6>
+          </div>
+        
+        <div
           onClick={addProductToCart}
-          className="btn-cart move-cart"
-          /*eslint-disable */
-          /*eslint-enable */
+          className="btn-cart"
         >
           <ShoppingCart className="me-50" size={14} />
-          <span> 'Add To Cart</span>
-        </Button>
+         
+        </div>
       </div>
     </Card>
   );
