@@ -36,12 +36,6 @@
     }
   }
 }
-@include themed {
-  .main-menu {
-    background: $back;
-  }
-}
-
 .content {
   position: relative;
   transition: 300ms ease all;
@@ -60,11 +54,6 @@
     position: fixed;
     top: 0;
     z-index: 11;
-  }
-}
-@include themed {
-  .header-navbar-shadow {
-    background: $backdrop;
   }
 }
 .navbar {
@@ -114,40 +103,39 @@
     visibility: hidden;
   }
 }
-@include themed {
-  .navbar {
-    background: $back;
-  }
+
+.cart-counter {
+  color: blue !important;
 }
-.navigation {
-  height: 100%;
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
-  width: 260px;
-  justify-content: space-between;
-  margin-bottom: 25px;
+// .navigation {
+//   height: 100%;
+//   width: 30%;
+//   display: flex;
+//   flex-direction: column;
+//   box-shadow: 0 0 15px 0 rgb(34 41 47 / 5%);
+//   width: 260px;
+//   justify-content: space-between;
+//   margin-bottom: 25px;
 
-  .logo-container {
-    height: 100%;
-    width: 70px;
-    padding: 25px;
-  }
+//   .logo-container {
+//     height: 100%;
+//     width: 70px;
+//     padding: 25px;
+//   }
 
-  .nav-links-container {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+//   .nav-links-container {
+//     width: 50%;
+//     height: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
 
-    .nav-link {
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-  }
-}
+//     .nav-link {
+//       padding: 10px 15px;
+//       cursor: pointer;
+//     }
+//   }
+// }
 .auth-wrapper {
   display: flex;
   flex-basis: 100%;
@@ -242,8 +230,13 @@
     }
   }
 }
-
 @include themed {
+  .main-menu {
+    background: $back;
+  }
+  .navbar {
+    background: $back;
+  }
   .auth-card {
     background-color: $back !important;
     color: $text;
@@ -252,13 +245,14 @@
       color: $text;
     }
   }
-}
-
-@include themed {
   .nav-link {
     color: $text;
   }
+  .header-navbar-shadow {
+    background: $backdrop;
+  }
 }
+
 @media (max-width: 1200px) {
   .main-menu {
     display: none;

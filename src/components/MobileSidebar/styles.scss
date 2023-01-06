@@ -9,14 +9,40 @@
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 100;
   backdrop-filter: blur(10px);
-transition: 0.4s transform ease;
-  
+  transition: 0.4s transform ease;
 }
-.active{
-    left: 0;
+.sidebar-detached{
+    margin-right: 2rem;
+    .shop-sidebar {
+            background: none !important;
+        }
 }
-@include themed {
-    .sidebar {
-        background: $back;
+
+
+.active {
+  left: 0;
+}
+@media (max-width: 991px) {
+  .sidebar-detached {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    transition: 0.4s transform ease;
+    margin-right: 0;
+    &.active{
+        left: 0;
+
     }
+  }
+}
+
+@include themed {
+  .sidebar {
+    background: $back;
+  }
 }

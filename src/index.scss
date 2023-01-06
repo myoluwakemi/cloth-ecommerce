@@ -16,7 +16,6 @@ body {
 }
 .product-content{
   display: flex;
-  gap: 2rem;
   
 }
 p {
@@ -65,10 +64,6 @@ a {
 
   // Shop Sidebar
   .sidebar-shop {
-    margin-top: 0.85rem;
-    width:260px;
-    z-index: 998;
-
     // for heading
     .filter-heading {
       margin-bottom: 1.75rem;
@@ -588,7 +583,6 @@ a {
 
 // Media queries to change grid columns in different Screens and to hide search results below 768px
 @media (max-width: 1200px) {
-  .ecommerce-application {
 
     // Header item area
     .ecommerce-header-items {
@@ -621,21 +615,10 @@ a {
       }
     }
 
-    // Horizontal Menu scss
-    &.horizontal-layout {
-      .body-content-overlay {
-        z-index: 998 !important;
-      }
-
-      .sidebar-shop {
-        z-index: 999 !important;
-      }
-    }
-  }
 }
 
 @media (max-width : 992px) {
-  .ecommerce-application {
+
     .sidebar-left {
       .sidebar {
 
@@ -662,7 +645,7 @@ a {
           }
         }
       }
-    }
+    
 
     // Grid view for responsive
     .grid-view {
@@ -681,8 +664,8 @@ a {
 }
 
 @media (max-width : 786px) {
-  .ecommerce-application {
-    .grid-view.wishlist-items {
+  
+    .grid-view,.wishlist-items {
       grid-template-columns: 1fr 1fr;
     }
 
@@ -702,18 +685,21 @@ a {
         }
       }
     }
-  }
+  
 }
 
 @media (max-width : 576px){
-  .ecommerce-application {
+  .product-content{
+    display: unset;
+  }
+  
 
     // Grid View
     .grid-view,
     .grid-view.wishlist-items {
       grid-template-columns: 1fr;
     }
-  }
+  
 }
 
 

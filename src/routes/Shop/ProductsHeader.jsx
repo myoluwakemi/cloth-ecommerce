@@ -13,8 +13,8 @@ import {
 } from "reactstrap";
 
 
-const ProductHeader = props => {
-    const { activeView, setActiveView, dispatch, getProducts, store, setSidebarOpen } = props
+const ProductHeader = ({activeView, setSidebarOpen}) => {
+   
 
     const sortToggleText = {
     'price-desc': 'Highest',
@@ -29,10 +29,10 @@ const ProductHeader = props => {
             <div className='result-toggler'>
               <button className='navbar-toggler shop-sidebar-toggler' >
                 <span className='navbar-toggler-icon d-block d-lg-none'>
-                  <Menu size={14} />
+                  <Menu size={14}  />
                 </span>
               </button>
-              <span className='search-results'> Results Found</span>
+              <span onClick={setSidebarOpen} className='search-results'> Results Found</span>
             </div>
             <div className='view-options d-flex'>
               <UncontrolledButtonDropdown className='dropdown-sort'>
@@ -81,7 +81,7 @@ const ProductHeader = props => {
                   outline
             
                 >
-                  <List size={18} />
+                  <List size={18}  />
                 </Button>
               </ButtonGroup>
             </div>

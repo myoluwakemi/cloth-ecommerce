@@ -1,8 +1,8 @@
 import classnames from "classnames";
-import { Card, CardBody, Row , Label, Input, Button,Col} from "reactstrap";
+import { Card, CardBody, Row, Label, Input, Button, Col } from "reactstrap";
 
 import { Star } from "react-feather";
-const ProductSidebar = ({ sidebarOpen }) => {
+const ProductSidebar = ({ show, onClose}) => {
   const categories = [
     {
       id: "appliances",
@@ -111,19 +111,19 @@ const ProductSidebar = ({ sidebarOpen }) => {
     },
   ];
   return (
-    <div className="sidebar-detached sidebar-left">
-      <div className="sidebar">
-        <div className={classnames("sidebar-shop", { show: sidebarOpen })}>
+    <div className={`sidebar-detached ${show? 'active': ''}` }>
+      <div className="sidebar shop-sidebar">
+        <div >
           <Row>
             <Col sm="12">
-              <h6 className="filter-heading d-none d-lg-block">Filters</h6>
+              <h6 className=" d-none d-lg-block">Filters</h6>
             </Col>
           </Row>
           <Row>
             <Card>
               <CardBody>
                 <div className="multi-range-price">
-                  <h6 className="filter-title mt-0">Multi Range</h6>
+                  <h6 onClick={onClose} className="filter-title mt-0">Multi Range</h6>
                   <ul className="list-unstyled price-range">
                     <li>
                       <div className="form-check">
@@ -221,56 +221,66 @@ const ProductSidebar = ({ sidebarOpen }) => {
                     })}
                   </ul>
                 </div>
-                 <div className='brands'>
-                <h6 className='filter-title'>Brands</h6>
-                <ul className='list-unstyled brand-list'>
-                  {brands.map(brand => {
+                <div className="brands">
+                  <h6 className="filter-title">Brands</h6>
+                  <ul className="list-unstyled brand-list">
+                    {brands.map((brand) => {
+                      return (
+                        <li key={brand.title}>
+                          <div className="form-check">
+                            <Input
+                              type="checkbox"
+                              id={brand.title}
+                              defaultChecked={brand.checked}
+                            />
+                            <Label
+                              className="form-check-label"
+                              for={brand.title}
+                            >
+                              {brand.title}
+                            </Label>
+                          </div>
+                          <span>{brand.total}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+                <div id="ratings">
+                  <h6 className="filter-title">Ratings</h6>
+                  {ratings.map((item) => {
                     return (
-                      <li key={brand.title}>
-                        <div className='form-check'>
-                          <Input type='checkbox' id={brand.title} defaultChecked={brand.checked} />
-                          <Label className='form-check-label' for={brand.title}>
-                            {brand.title}
-                          </Label>
-                        </div>
-                        <span>{brand.total}</span>
-                      </li>
-                    )
+                      <div key={item.total} className="ratings-list">
+                        <a href="/" onClick={(e) => e.preventDefault()}>
+                          <ul className="unstyled-list list-inline">
+                            {new Array(5).fill().map((listItem, index) => {
+                              return (
+                                <li
+                                  key={index}
+                                  className="ratings-list-item me-25"
+                                >
+                                  <Star
+                                    className={classnames({
+                                      "filled-star": index + 1 <= item.ratings,
+                                      "unfilled-star": index + 1 > item.ratings,
+                                    })}
+                                  />
+                                </li>
+                              );
+                            })}
+                            <li>& up</li>
+                          </ul>
+                        </a>
+                        <div className="stars-received">{item.total}</div>
+                      </div>
+                    );
                   })}
-                </ul>
-              </div>
-               <div id='ratings'>
-                <h6 className='filter-title'>Ratings</h6>
-                {ratings.map(item => {
-                  return (
-                    <div key={item.total} className='ratings-list'>
-                      <a href='/' onClick={e => e.preventDefault()}>
-                        <ul className='unstyled-list list-inline'>
-                          {new Array(5).fill().map((listItem, index) => {
-                            return (
-                              <li key={index} className='ratings-list-item me-25'>
-                                <Star
-                                  className={classnames({
-                                    'filled-star': index + 1 <= item.ratings,
-                                    'unfilled-star': index + 1 > item.ratings
-                                  })}
-                                />
-                              </li>
-                            )
-                          })}
-                          <li>& up</li>
-                        </ul>
-                      </a>
-                      <div className='stars-received'>{item.total}</div>
-                    </div>
-                  )
-                })}
-              </div>
-              <div id='clear-filters'>
-                <Button color='primary' block>
-                  Clear All Filters
-                </Button>
-              </div>
+                </div>
+                <div id="clear-filters">
+                  <Button color="primary" block>
+                    Clear All Filters
+                  </Button>
+                </div>
               </CardBody>
             </Card>
           </Row>
@@ -279,4 +289,4 @@ const ProductSidebar = ({ sidebarOpen }) => {
     </div>
   );
 };
-export default ProductSidebar
+export default ProductSidebar;

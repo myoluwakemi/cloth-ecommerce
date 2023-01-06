@@ -11,7 +11,8 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
-import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+// import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+import CartDropdown from "./cartDropDown";
 
 import "./layout.scss";
 import MobileSidebar from "../../components/MobileSidebar/indej";
@@ -74,6 +75,7 @@ const Layout = () => {
             <Menu onClick={toggleSidebar} className="header-menu-toggler" />
             <div className="header-right-side">
               <IntLDropdown />
+              <CartDropdown/>
               <div className="toggle-btn-section">
                 {theme === "light" ? (
                   <Sun onClick={handleThemeChange} />
@@ -85,7 +87,7 @@ const Layout = () => {
           </div>
           <div className="header-navbar-shadow"></div>
           <main className="routes-wrapper">
-            <h1>{t("Welcome")}</h1>
+            {/* <h1>{t("Welcome")}</h1> */}
             <Outlet />
           </main>
         </div>
