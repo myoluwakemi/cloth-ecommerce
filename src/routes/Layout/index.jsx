@@ -10,8 +10,8 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
-import CartIcon from "../../components/cart-icon/cart-icon.component";
-// import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
+// import CartIcon from "../../components/cart-icon/cart-icon.component";
+//  import CartDropdownn from "../../components/cart-dropdown/cart-dropdown.component";
 import CartDropdown from "./cartDropDown";
 
 import "./layout.scss";
@@ -71,7 +71,7 @@ const Layout = () => {
         </div>
         <div className="content">
           <div className="navbar">
-            {/* <div className="">{isCartOpen && <CartDropdown />}</div> */}
+            {/* <div className="">{isCartOpen && <CartDropdownn />}</div> */}
             <Menu onClick={toggleSidebar} className="header-menu-toggler" />
             <div className="header-right-side">
               <IntLDropdown />
