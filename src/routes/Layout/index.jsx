@@ -55,6 +55,10 @@ const Layout = () => {
               <ShoppingBag className="nav-icon" />
               <span>shop</span>
             </Link>
+             <Link className="nav-link" to="shop">
+              <ShoppingBag className="nav-icon" />
+              <span>wishlist</span>
+            </Link>
             {currentUser ? (
               <div className="nav-link" onClick={handleSignOut}>
                 <UserCheck className="nav-icon" />

@@ -56,6 +56,7 @@ const Product = ({ product }) => {
           </div>
         </div>
          <div className="item-cost">
+            <span className="price-title">Price:</span>
             <h6 className="grid-item-price">${price}</h6>
           </div>
         
