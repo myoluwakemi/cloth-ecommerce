@@ -10,13 +10,13 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
-// import CartIcon from "../../components/cart-icon/cart-icon.component";
-//  import CartDropdownn from "../../components/cart-dropdown/cart-dropdown.component";
+import CartDropdownn from "../../components/cart-dropdown/cart-dropdown.component";
 import CartDropdown from "./cartDropDown";
 
 import "./layout.scss";
 import MobileSidebar from "../../components/MobileSidebar/indej";
 import IntLDropdown from "./IntlDropDown";
+import CartIcon from "../../components/cart-icon/cart-icon.component";
 
 const Layout = () => {
   const { t } = useTranslation();
@@ -55,7 +55,7 @@ const Layout = () => {
               <ShoppingBag className="nav-icon" />
               <span>shop</span>
             </Link>
-             <Link className="nav-link" to="shop">
+            <Link className="nav-link" to="shop">
               <ShoppingBag className="nav-icon" />
               <span>wishlist</span>
             </Link>
@@ -75,16 +75,16 @@ const Layout = () => {
         </div>
         <div className="content">
           <div className="navbar">
-            {/* <div className="">{isCartOpen && <CartDropdownn />}</div> */}
+            <div className="">{isCartOpen && <CartDropdownn />}</div>
             <Menu onClick={toggleSidebar} className="header-menu-toggler" />
             <div className="header-right-side">
               <IntLDropdown />
-              <CartDropdown/>
+              <CartIcon />
               <div className="toggle-btn-section">
                 {theme === "light" ? (
-                  <Sun onClick={handleThemeChange} />
+                  <Sun className="light-icon" onClick={handleThemeChange} />
                 ) : (
-                  <Moon onClick={handleThemeChange} />
+                  <Moon className="dark-icon" onClick={handleThemeChange} />
                 )}
               </div>
             </div>

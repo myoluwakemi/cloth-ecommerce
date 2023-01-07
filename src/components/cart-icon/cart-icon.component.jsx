@@ -1,5 +1,6 @@
 import { useContext } from "react"
-import {ReactComponent as ShoppingIcon} from "../../assests/shopping-bag.svg"
+import { ShoppingCart } from "react-feather"
+import { Badge } from "reactstrap"
 import { CartContext } from "../../contexts/cart.content"
 
 import "./cart-icon.styles.scss"
@@ -13,8 +14,8 @@ const CartIcon = () => {
 
     return(
         <div onClick={toggleCart} className="cart-icon-container">
-            <ShoppingIcon className="shopping-icon"/>
-            <span className="item-count">{cartCount}</span>
+            <ShoppingCart className="shopping-icon"/>
+            <Badge pill className="item-count">{cartCount}</Badge>
 
         </div>
     )

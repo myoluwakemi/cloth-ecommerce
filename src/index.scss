@@ -32,6 +32,13 @@ a {
 .is-invalid {
   border-color: red !important;
 }
+.dark-icon{
+  color: #d0d2d6;
+}
+.shopping-icon, .light-icon, .dark-icon {
+  width: 18px;
+  height: 18px;
+}
 .btn-primary {
   background: linear-gradient(to right, #614385, #516395) !important;
   color: #fff !important;
@@ -80,26 +87,6 @@ a {
       justify-content: space-between;
       align-items: center;
       margin-bottom: 0.75rem;
-    }
-  }
-
-  // Sidebar for slider
-  .range-slider.noUi-horizontal {
-    .noUi-handle {
-      .noUi-tooltip {
-        opacity: 0;
-        transform: translate(-50%, -15%);
-
-        &:before {
-          content: "$ ";
-        }
-      }
-
-      &:active {
-        .noUi-tooltip {
-          opacity: 1;
-        }
-      }
     }
   }
 
@@ -715,6 +702,10 @@ a {
   }
   .card {
     background: $back;
+    color: $text;
+  }
+  a{
+    color: $text !important;
   }
   .form-control {
     border: 1px solid $borderColor;
