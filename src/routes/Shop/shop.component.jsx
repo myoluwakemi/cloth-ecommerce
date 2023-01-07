@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Fragment, useContext } from "react";
 import ProductCard from "../../components/product-card/product-card.component";
 import { ProductContext } from "../../contexts/product.context";
+import ProductSearchbar from "./ProductSearchbar";
 import ProductHeader from "./ProductsHeader";
 import ProductSidebar from "./ProductSidebar";
 
@@ -18,6 +19,7 @@ const Shop = () => {
         <ProductSidebar show={toggle} onClose={handleToggle} />
         <div>
           <ProductHeader setSidebarOpen={handleToggle}  />
+          <ProductSearchbar/>
           <ProductCard activeView="grid" products={product}></ProductCard>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/cart.content";
 
 import { ThemeContext } from "../../contexts/theme-context";
-import { UserCheck, ShoppingBag, Menu, Sun, Moon } from "react-feather";
+import { UserCheck, ShoppingBag, Menu, Sun, Moon, Heart } from "react-feather";
 
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -56,7 +56,7 @@ const Layout = () => {
               <span>shop</span>
             </Link>
             <Link className="nav-link" to="shop">
-              <ShoppingBag className="nav-icon" />
+              <Heart className="nav-icon" />
               <span>wishlist</span>
             </Link>
             {currentUser ? (
