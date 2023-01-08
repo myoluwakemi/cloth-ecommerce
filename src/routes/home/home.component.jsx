@@ -25,6 +25,11 @@ const directory = [
     title: "mens",
     imageUrl: "https://i.ibb.co/R70vBrQ/men.png"
   },
+  {
+    id: 6,
+    title: 'gadgets',
+    imageUrl: "../assets/eCommerce/2.png"
+  }
   
 ];
 
