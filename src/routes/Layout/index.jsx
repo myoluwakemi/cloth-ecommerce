@@ -75,7 +75,6 @@ const Layout = () => {
         </div>
         <div className="content">
           <div className="navbar">
-            <div className="">{isCartOpen && <CartDropdownn />}</div>
             <Menu onClick={toggleSidebar} className="header-menu-toggler" />
             <div className="header-right-side">
               <IntLDropdown />
@@ -96,6 +95,7 @@ const Layout = () => {
           </main>
         </div>
       </div>
+      <div className="">{isCartOpen && <CartDropdownn />}</div>
       <MobileSidebar show={showSidebar} onClose={toggleSidebar} />
     </Fragment>
   );
