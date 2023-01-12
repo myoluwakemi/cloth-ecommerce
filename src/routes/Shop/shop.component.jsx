@@ -24,7 +24,7 @@ const Shop = () => {
       <div className="product-content">
         <ProductSidebar show={toggle} onClose={handleToggle} />
         <div>
-          <ProductHeader setSidebarOpen={handleToggle}  />
+          <ProductHeader productTotal={filterProduct.length} setSidebarOpen={handleToggle}  />
           <ProductSearchbar onSearch={(e)=>searchHandler(e.target.value) }/>
           <ProductCard activeView="grid" products={filterProduct}></ProductCard>
         </div>

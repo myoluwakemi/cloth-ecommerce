@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 
 
-const ProductHeader = ({activeView, setSidebarOpen}) => {
+const ProductHeader = ({activeView, setSidebarOpen, productTotal}) => {
    
 
     const sortToggleText = {
@@ -32,7 +32,7 @@ const ProductHeader = ({activeView, setSidebarOpen}) => {
                   <Menu onClick={setSidebarOpen} size={14}  />
                 </span>
               </button>
-              <span  className='search-results'> Results Found</span>
+              <span  className='search-results'> {productTotal} Results Found </span>
             </div>
             <div className='view-options d-flex'>
               <UncontrolledButtonDropdown className='dropdown-sort'>
