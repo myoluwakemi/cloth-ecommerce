@@ -33,19 +33,22 @@ const Shop = () => {
     <>
       <div className="product-content">
         <ProductSidebar show={toggle} onClose={handleToggle} />
-        <div style={{width: "100%"}}>
+        <div style={{ width: "100%" }}>
           <ProductHeader
+            activeView={activeView}
+            setActiveView={setActiveView}
             productTotal={filteredProducts.length}
             setSidebarOpen={handleToggle}
           />
           <ProductSearchbar onSearch={(e) => searchHandler(e.target.value)} />
-          {
-            filteredProducts.length > 0?   <ProductCard
-            activeView="grid"
-            products={filteredProducts}
-          ></ProductCard>: <div className="grid-view empty-product-state">No result found</div>
-          }
-        
+          {filteredProducts.length > 0 ? (
+            <ProductCard
+              activeView={activeView}
+              products={filteredProducts}
+            ></ProductCard>
+          ) : (
+            <div className="grid-view empty-product-state">No result found</div>
+          )}
         </div>
       </div>
     </>

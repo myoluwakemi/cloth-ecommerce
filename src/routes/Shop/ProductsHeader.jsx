@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 
 
-const ProductHeader = ({activeView, setSidebarOpen, productTotal}) => {
+const ProductHeader = ({activeView,setActiveView, setSidebarOpen, productTotal}) => {
    
 
     const sortToggleText = {
@@ -68,6 +68,7 @@ const ProductHeader = ({activeView, setSidebarOpen, productTotal}) => {
                   })}
                   color='primary'
                   outline
+                 onClick={() => setActiveView('grid')}
                  
                 >
                   <Grid size={18} />
@@ -79,6 +80,7 @@ const ProductHeader = ({activeView, setSidebarOpen, productTotal}) => {
                   })}
                   color='primary'
                   outline
+                    onClick={() => setActiveView('list')}
             
                 >
                   <List size={18}  />
