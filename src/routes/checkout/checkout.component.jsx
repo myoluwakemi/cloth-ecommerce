@@ -6,17 +6,15 @@ import { Star, X, Plus, Minus, Heart } from "react-feather";
 import "./checkout.styles.scss";
 import { Link } from "react-router-dom";
 const CheckOut = () => {
-  const { cartItems , addItemToCart,removeItemFromCart} = useContext(CartContext);
+  const { cartItems , addItemToCart,removeItemFromCart, clearItemFromCart, cartTotal} = useContext(CartContext);
 
-  const addItemToCartHandler = (item) => {
-    addItemToCart()
-  }
+  
   return (
     <div>
-      THis is checkout
+      THis is checkout {cartTotal}
       <div className="list-view product-checkout">
         {cartItems.map((item) => {
-          const { id, name, quantity, imageUrl } = item;
+          const { id, name, quantity, imageUrl, price } = item;
           return (
             <Card key={id} className="ecommerce-card">
               <div className="item-img">
@@ -77,7 +75,7 @@ const CheckOut = () => {
               <div className="item-options text-center">
                 <div className="item-wrapper">
                   <div className="item-cost">
-                    <h4 className="item-price">${item.price}</h4>
+                    <h4 className="item-price">${item.price * quantity}</h4>
                     {item.hasFreeShipping ? (
                       <CardText className="shipping">
                         <Badge color="light-success" pill>
@@ -87,7 +85,7 @@ const CheckOut = () => {
                     ) : null}
                   </div>
                 </div>
-                <Button className="mt-1 remove-wishlist" color="light">
+                <Button onClick={() =>  clearItemFromCart(item)} className="mt-1 remove-wishlist" color="light">
                   <X size={14} className="me-25" />
                   <span>Remove</span>
                 </Button>
