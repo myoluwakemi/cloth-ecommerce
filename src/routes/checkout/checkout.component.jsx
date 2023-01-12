@@ -26,8 +26,7 @@ const CheckOut = () => {
   return (
     <div className="list-view product-checkout">
       <div>
-        {" "}
-        {cartItems.map((item) => {
+        {cartItems.length?  (cartItems.map((item) => {
           const { id, name, quantity, imageUrl, price } = item;
           return (
             <Card key={id} className="ecommerce-card">
@@ -122,7 +121,8 @@ const CheckOut = () => {
               </div>
             </Card>
           );
-        })}
+        })) : <div>Your cart is empty</div> }
+      
       </div>
       <div className="checkout-options">
         {" "}
