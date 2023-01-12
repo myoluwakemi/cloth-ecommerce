@@ -567,7 +567,7 @@ a {
 }
 
 // To hide toggler on lg and up and grid view for btn-wishlist and list view for checkout
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .ecommerce-header-items {
     // Hide toggler in > lg screen
     .shop-sidebar-toggler {

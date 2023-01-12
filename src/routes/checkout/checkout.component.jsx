@@ -1,18 +1,32 @@
 import { useContext } from "react";
 import classnames from "classnames";
 import { CartContext } from "../../contexts/cart.content";
-import { Card, CardBody, CardText, Button, Badge } from "reactstrap";
+import {
+  Card,
+  CardBody,
+  CardText,
+  Button,
+  Badge,
+  InputGroup,
+  Input,
+  InputGroupText,
+} from "reactstrap";
 import { Star, X, Plus, Minus, Heart } from "react-feather";
 import "./checkout.styles.scss";
 import { Link } from "react-router-dom";
 const CheckOut = () => {
-  const { cartItems , addItemToCart,removeItemFromCart, clearItemFromCart, cartTotal} = useContext(CartContext);
+  const {
+    cartItems,
+    addItemToCart,
+    removeItemFromCart,
+    clearItemFromCart,
+    cartTotal,
+  } = useContext(CartContext);
 
-  
   return (
-    <div>
-      THis is checkout {cartTotal}
-      <div className="list-view product-checkout">
+    <div className="list-view product-checkout">
+      <div>
+        {" "}
         {cartItems.map((item) => {
           const { id, name, quantity, imageUrl, price } = item;
           return (
@@ -63,7 +77,10 @@ const CheckOut = () => {
                     &#10094;
                   </div>
                   <span className="value">{quantity}</span>
-                  <div onClick={()=> removeItemFromCart(item)} className="arrow">
+                  <div
+                    onClick={() => removeItemFromCart(item)}
+                    className="arrow"
+                  >
                     &#10095;
                   </div>
                 </div>
@@ -85,7 +102,11 @@ const CheckOut = () => {
                     ) : null}
                   </div>
                 </div>
-                <Button onClick={() =>  clearItemFromCart(item)} className="mt-1 remove-wishlist" color="light">
+                <Button
+                  onClick={() => clearItemFromCart(item)}
+                  className="mt-1 remove-wishlist"
+                  color="light"
+                >
                   <X size={14} className="me-25" />
                   <span>Remove</span>
                 </Button>
@@ -102,6 +123,71 @@ const CheckOut = () => {
             </Card>
           );
         })}
+      </div>
+      <div className="checkout-options">
+        {" "}
+        <Card>
+          <CardBody>
+            <label className="section-label mb-1">Options</label>
+            <InputGroup className="input-group-merge coupons">
+              <Input placeholder="Coupons" />
+              <InputGroupText className="text-primary ms-0">
+                Apply
+              </InputGroupText>
+            </InputGroup>
+            <hr />
+            <div className="price-details">
+              <h6 className="price-title">Price Details</h6>
+              <ul className="list-unstyled">
+                <li className="price-detail">
+                  <div className="detail-title">Total MRP</div>
+                  <div className="detail-amt">$598</div>
+                </li>
+                <li className="price-detail">
+                  <div className="detail-title">Bag Discount</div>
+                  <div className="detail-amt discount-amt text-success">
+                    -25$
+                  </div>
+                </li>
+                <li className="price-detail">
+                  <div className="detail-title">Estimated Tax</div>
+                  <div className="detail-amt">$1.3</div>
+                </li>
+                <li className="price-detail">
+                  <div className="detail-title">EMI Eligibility</div>
+                  <a
+                    href="/"
+                    className="detail-amt text-primary"
+                    onClick={(e) => e.preventDefault()}
+                  >
+                    Details
+                  </a>
+                </li>
+                <li className="price-detail">
+                  <div className="detail-title">Delivery Charges</div>
+                  <div className="detail-amt discount-amt text-success">
+                    Free
+                  </div>
+                </li>
+              </ul>
+              <hr />
+              <ul className="list-unstyled">
+                <li className="price-detail">
+                  <div className="detail-title detail-total">Total</div>
+                  <div className="detail-amt fw-bolder">${cartTotal}</div>
+                </li>
+              </ul>
+              <Button
+                block
+                color="primary"
+                disabled={!cartItems.length}
+                classnames="btn-next place-order"
+              >
+                Place Order
+              </Button>
+            </div>
+          </CardBody>
+        </Card>
       </div>
     </div>
   );
