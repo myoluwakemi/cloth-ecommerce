@@ -10,12 +10,23 @@
   z-index: 100;
   backdrop-filter: blur(10px);
   transition: 0.4s transform ease;
+  .sidebar{
+    padding: 1rem;
+  }
 }
 .sidebar-detached{
     margin-right: 2rem;
+    .product-sidebar-x{
+        display: none;
+    }
     .shop-sidebar {
             background: none !important;
         }
+}
+.sidebar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 
@@ -37,6 +48,12 @@
     &.active{
         left: 0;
 
+    }
+    .sidebar{
+        overflow: scroll;
+        .product-sidebar-x{
+            display: flex;
+        }
     }
   }
 }

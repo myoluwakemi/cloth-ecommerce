@@ -11,7 +11,6 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
 import CartDropdownn from "../../components/cart-dropdown/cart-dropdown.component";
-import CartDropdown from "./cartDropDown";
 
 import "./layout.scss";
 import MobileSidebar from "../../components/MobileSidebar/indej";

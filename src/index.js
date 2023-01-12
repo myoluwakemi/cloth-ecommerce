@@ -3,15 +3,16 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 
 import App from "./App";
-import './configs/i18n'
+import "./configs/i18n";
 import { UserProvider } from "./contexts/user.context";
 import { ProductProvider } from "./contexts/product.context";
 import { CartProvider } from "./contexts/cart.content";
 
 import "./index.scss";
-import './assests/scss/main.scss'
-import './assests/scss/sidebar.scss'
+import "./assests/scss/main.scss";
+import "./assests/scss/sidebar.scss";
 import reportWebVitals from "./reportWebVitals";
+import { SearchProvider } from "./contexts/search-context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,7 +21,9 @@ root.render(
       <UserProvider>
         <ProductProvider>
           <CartProvider>
-          <App />
+            <SearchProvider>
+              <App />
+            </SearchProvider>
           </CartProvider>
         </ProductProvider>
       </UserProvider>

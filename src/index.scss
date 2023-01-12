@@ -650,15 +650,16 @@ a {
       grid-template-columns: 1fr 1fr;
     }
 
-    // to hide search results
-    .ecommerce-header-items {
-      .result-toggler {
-        .search-results {
-          display: none;
-        }
-      }
-    }
+   
   }
+     // to hide search results
+     .ecommerce-header-items {
+       .result-toggler {
+         .search-results {
+           display: none;
+         }
+       }
+     }
 }
 
 @media (max-width: 786px) {

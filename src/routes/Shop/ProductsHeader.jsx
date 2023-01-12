@@ -29,10 +29,10 @@ const ProductHeader = ({activeView, setSidebarOpen}) => {
             <div className='result-toggler'>
               <button className='navbar-toggler shop-sidebar-toggler' >
                 <span className='navbar-toggler-icon d-block d-lg-none'>
-                  <Menu size={14}  />
+                  <Menu onClick={setSidebarOpen} size={14}  />
                 </span>
               </button>
-              <span onClick={setSidebarOpen} className='search-results'> Results Found</span>
+              <span  className='search-results'> Results Found</span>
             </div>
             <div className='view-options d-flex'>
               <UncontrolledButtonDropdown className='dropdown-sort'>

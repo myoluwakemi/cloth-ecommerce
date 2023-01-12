@@ -1,7 +1,7 @@
 import classnames from "classnames";
 import { Card, CardBody, Row, Label, Input, Button, Col } from "reactstrap";
 
-import { Star } from "react-feather";
+import { Star, X } from "react-feather";
 const ProductSidebar = ({ show, onClose}) => {
   const categories = [
     {
@@ -123,7 +123,12 @@ const ProductSidebar = ({ show, onClose}) => {
             <Card>
               <CardBody>
                 <div className="multi-range-price">
-                  <h6 onClick={onClose} className="filter-title mt-0">Multi Range</h6>
+                    <div className="sidebar-header">
+                        <h6 className="filter-title mt-0">Multi Range</h6>
+                        <X size={16} onClick={onClose} className="product-sidebar-x" />
+
+                    </div>
+                  
                   <ul className="list-unstyled price-range">
                     <li>
                       <div className="form-check">
