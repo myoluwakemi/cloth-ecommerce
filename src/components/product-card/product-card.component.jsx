@@ -8,12 +8,12 @@ import { Star, ShoppingCart, Heart } from "react-feather";
 
 const Product = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);
-  const { name, price, imageUrl, description } = product;
+  const { id, name, price, imageUrl, description } = product;
   const addProductToCart = () => addItemToCart(product);
   return (
-    <Card className="ecommerce-card">
+    <Card className="ecommerce-card" key={product.id}>
       <div className="item-img text-center mx-auto">
-        <Link to={`/apps/ecommerce/product-detail/`}>
+        <Link to={`/product/${id}`}>
           <img className="img-fluid card-img-top" src={imageUrl} alt={name} />
         </Link>
       </div>
@@ -30,7 +30,6 @@ const Product = ({ product }) => {
                     })}
                   </ul>
                 </div> */}
-         
         </div>
         <h6 className="item-name">
           <Link className="text-body" to={`/apps/ecommerce/product-detail/`}>
@@ -55,17 +54,13 @@ const Product = ({ product }) => {
             <h4 className="item-price">${price}</h4>
           </div>
         </div>
-         <div className="item-cost">
-            <span className="price-title">Price:</span>
-            <h6 className="grid-item-price">${price}</h6>
-          </div>
-        
-        <div
-          onClick={addProductToCart}
-          className="btn-cart"
-        >
+        <div className="item-cost">
+          <span className="price-title">Price:</span>
+          <h6 className="grid-item-price">${price}</h6>
+        </div>
+
+        <div onClick={addProductToCart} className="btn-cart">
           <ShoppingCart className="me-50" size={14} />
-         
         </div>
       </div>
     </Card>
@@ -80,8 +75,8 @@ const ProductCard = ({ products, activeView }) => {
         "list-view": activeView === "list",
       })}
     >
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
+      {products.map(( product) => (
+        <Product product={product} />
       ))}
     </div>
   );
