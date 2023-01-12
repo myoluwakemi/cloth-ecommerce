@@ -1,6 +1,11 @@
 .products-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
-    row-gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 50px;
+}
+.empty-product-state {
+  text-align: center;
+  display: flex !important;
+  justify-content: center;
 }

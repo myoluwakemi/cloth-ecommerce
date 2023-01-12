@@ -11,22 +11,41 @@ import "./shop.styles.scss";
 
 const Shop = () => {
   const { product } = useContext(ProductContext);
-  const {query, searchHandler} = useContext(SeachProductContext)
-  const [ activeView, setActiveView ] = useState("grid");
-  const [ toggle, setToggle]  = useState(false);
+  const { query, searchHandler } = useContext(SeachProductContext);
+  const [activeView, setActiveView] = useState("grid");
+  const [toggle, setToggle] = useState(false);
 
-  const filterProduct = product.filter((item) => {
-   return  item.name.toLowerCase().includes(query.toLocaleLowerCase())
-  })
+  let filteredProducts;
+  if (product) {
+    filteredProducts = product.filter((item) => {
+      if (item.name.toLowerCase().includes(query.toLocaleLowerCase())) {
+        return product;
+      }
+      return null;
+    });
+  }
+
+  //   const filterProduct = product.filter((item) => {
+  //    return  item.name.toLowerCase().includes(query.toLocaleLowerCase())
+  //   })
   const handleToggle = () => setToggle((prevState) => !prevState);
   return (
     <>
       <div className="product-content">
         <ProductSidebar show={toggle} onClose={handleToggle} />
-        <div>
-          <ProductHeader productTotal={filterProduct.length} setSidebarOpen={handleToggle}  />
-          <ProductSearchbar onSearch={(e)=>searchHandler(e.target.value) }/>
-          <ProductCard activeView="grid" products={filterProduct}></ProductCard>
+        <div style={{width: "100%"}}>
+          <ProductHeader
+            productTotal={filteredProducts.length}
+            setSidebarOpen={handleToggle}
+          />
+          <ProductSearchbar onSearch={(e) => searchHandler(e.target.value)} />
+          {
+            filteredProducts.length > 0?   <ProductCard
+            activeView="grid"
+            products={filteredProducts}
+          ></ProductCard>: <div className="grid-view empty-product-state">No result found</div>
+          }
+        
         </div>
       </div>
     </>
