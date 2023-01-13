@@ -10,7 +10,7 @@ body {
   padding: 0;
   height: 100%;
   direction: ltr;
-  font-family: 'DM Sans', sans-serif !important;
+  font-family: "DM Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,12 +32,19 @@ a {
 .is-invalid {
   border-color: red !important;
 }
-.dark-icon{
+.dark-icon {
   color: #d0d2d6;
 }
-.shopping-icon, .light-icon, .dark-icon {
+.shopping-icon,
+.light-icon,
+.dark-icon {
   width: 18px;
   height: 18px;
+}
+.form-check-input:checked {
+  background: linear-gradient(to right, #614385, #516395) !important;
+  border-color: #fff !important;
+
 }
 .btn-primary {
   background: linear-gradient(to right, #614385, #516395) !important;
@@ -46,90 +53,76 @@ a {
 }
 .form-control {
   padding: 0.571rem 1rem;
-  background-color: #fff;
   background-clip: padding-box;
 
   border-radius: 0.357rem;
 }
-.unstyled-list{
+.unstyled-list {
   display: flex;
 }
 
+
 .form-control:focus {
-  background-color: #fff;
-  border-color: #7367f0;
-  box-shadow: 0 3px 10px 0 rgb(34 41 47 / 10%);
+  border-color: none !important; 
+  box-shadow: unset !important;
+  
 }
 
 .content-body {
   position: relative;
 }
-.product-detail{
-  padding: 2rem 0.1rem;
-  .dropdown-toggle{
-    display: flex;
-    align-items: center;
-  }
-  .dropdown-menu{
-    min-width: 3rem;
-    box-shadow: 0 5px 25px rgb(34 41 47 / 10%);
-    border: none;
-    
+
+.filter-heading {
+  margin-bottom: 1.75rem;
+}
+
+// for title
+.filter-title {
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+}
+
+// Sidebar price range and categories list
+.price-range,
+.categories-list {
+  li:not(:last-child) {
+    margin-bottom: 0.75rem;
   }
 }
 
-  .filter-heading {
-    margin-bottom: 1.75rem;
-  }
-
-  // for title
-  .filter-title {
-    margin-bottom: 1rem;
-    margin-top: 2.5rem;
-  }
-
-  // Sidebar price range and categories list
-  .price-range,
-  .categories-list {
-    li:not(:last-child) {
-      margin-bottom: 0.75rem;
-    }
-  }
-
-  // Sidebar brand list
-  .brand-list {
-    li {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 0.75rem;
-    }
-  }
-
-  // for stars in rating
-  .ratings-list {
+// Sidebar brand list
+.brand-list {
+  li {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    &:last-child {
-      margin-bottom: 2.5rem;
-    }
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+}
 
-    ul {
-      margin-bottom: 0;
-      display: flex !important;
+// for stars in rating
+.ratings-list {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  &:last-child {
+    margin-bottom: 2.5rem;
+  }
 
-      .ratings-list-item {
-        svg,
-        i {
-          width: 0.75rem;
-          height: 0.75rem;
-          font-size: 1.25rem;
-        }
+  ul {
+    margin-bottom: 0;
+    display: flex !important;
+
+    .ratings-list-item {
+      svg,
+      i {
+        width: 0.75rem;
+        height: 0.75rem;
+        font-size: 1.25rem;
       }
     }
   }
-
+}
 
 // ratings style
 .filled-star {
@@ -279,10 +272,9 @@ a {
   &:not(.wishlist-items) {
     margin-top: 2rem;
   }
-  .ecommerce-card{
+  .ecommerce-card {
     margin-bottom: 1.5rem;
-      border-radius: 16px;
-    
+    border-radius: 16px;
   }
 }
 
@@ -332,10 +324,16 @@ a {
       .price-title {
         font-size: 11px;
       }
-      .grid-item-price {
-        font-weight: 700;
-        font-size: 18px;
+      .item-cost {
+        display: flex;
+        flex-direction: column;
+        align-items: self-start;
+        .grid-item-price {
+          font-weight: 700;
+          font-size: 18px;
+        }
       }
+
       .item-wrapper {
         display: none;
       }
@@ -665,17 +663,15 @@ a {
     .grid-view {
       grid-template-columns: 1fr 1fr;
     }
-
-   
   }
-     // to hide search results
-     .ecommerce-header-items {
-       .result-toggler {
-         .search-results {
-           display: none;
-         }
-       }
-     }
+  // to hide search results
+  .ecommerce-header-items {
+    .result-toggler {
+      .search-results {
+        display: none;
+      }
+    }
+  }
 }
 
 @media (max-width: 786px) {
@@ -721,15 +717,21 @@ a {
     background: $back;
     color: $text;
   }
-  a{
+  a {
     color: $text !important;
   }
-  .product-detail{
+  .product-detail {
     color: $text;
   }
   .form-control {
     border: 1px solid $borderColor;
+   background-color: $back;
+    color: $text;
   }
+   .form-control:focus{
+    background-color: $back;
+    color: $text;
+   }
   input:-webkit-autofill,
   .textarea:-webkit-autofill,
   .select:-webkit-autofill {

@@ -1,0 +1,29 @@
+@import "../../assests/scss/theme-variables.scss";
+.product-detail {
+    padding: 2rem 0.1rem;
+    .item-company{
+        font-size: 14px;
+        font-weight: lighter;
+    }
+    span{
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .dropdown-toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    .dropdown-menu {
+        min-width: 3rem;
+        box-shadow: 0 5px 25px rgb(34 41 47 / 10%);
+        border: none;
+    }
+}
+
+@include themed {
+    .dropdown-toggle{
+        color: $text;
+    }
+}

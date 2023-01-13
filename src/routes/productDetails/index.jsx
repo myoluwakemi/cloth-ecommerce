@@ -27,6 +27,7 @@ import {
   DropdownToggle,
   UncontrolledButtonDropdown,
 } from "reactstrap";
+import "./styles.scss"
 
 const ProductDetails = () => {
   const { product } = useContext(ProductContext);
@@ -55,7 +56,7 @@ const ProductDetails = () => {
       <Col md="7" xs="12">
         <h4>{productt.name}</h4>
         <CardText tag="span" className="item-company">
-          By
+          By{" "}
           <a
             className="company-name"
             href="/"
@@ -71,7 +72,7 @@ const ProductDetails = () => {
               return (
                 <li key={index} className="ratings-list-item me-25">
                   <Star
-                  size={12}
+                    size={12}
                     className={classnames({
                       "filled-star": index + 1 <= productt.rating,
                       "unfilled-star": index + 1 > productt.rating,
@@ -83,19 +84,17 @@ const ProductDetails = () => {
           </ul>
         </div>
         <CardText>
-          Available -<span className="text-success ms-25">In stock</span>
+          Available - <span className="ms-25">In stock</span>
         </CardText>
         <CardText>{productt.description}</CardText>
         <ul className="product-features list-unstyled">
           {productt.hasFreeShipping ? (
             <li>
-              <ShoppingCart size={19} />
-              <span>Free Shipping</span>
+              <ShoppingCart size={15} /> <span>Free Shipping</span>
             </li>
           ) : null}
           <li>
-            <DollarSign size={19} />
-            <span>EMI options available</span>
+            <DollarSign size={15} /> <span>EMI options available</span>
           </li>
         </ul>
         <hr />
@@ -108,18 +107,8 @@ const ProductDetails = () => {
           <Button
             className="btn-cart me-0 me-sm-1 mb-1 mb-sm-0"
             color="primary"
-            // onClick={() => handleCartBtn(data.id, data.isInCart)}
-            // /*eslint-disable */
-            // {...(data.isInCart
-            //   ? {
-            //       to: '/apps/ecommerce/checkout'
-            //     }
-            //   : {})}
-            /*eslint-enable */
           >
             <ShoppingCart className="me-50" size={14} />
-            hjjh
-            {/* {data.isInCart ? 'View in cart' : 'Move to cart'} */}
           </Button>
           <Button
             className="btn-wishlist me-0 me-sm-1 mb-1 mb-sm-0"
@@ -133,12 +122,10 @@ const ProductDetails = () => {
               //     'text-danger': data.isInWishlist
               //   })}
             />
-            <span>Wishlist</span>
           </Button>
           <UncontrolledButtonDropdown className="dropdown-icon-wrapper btn-share">
             <DropdownToggle
               className="btn-icon hide-arrow d-flex;"
-              color="secondary"
               caret
               outline
             >

@@ -8,7 +8,7 @@ import { Star, ShoppingCart, Heart } from "react-feather";
 
 const Product = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);
-  const { id, name, price, imageUrl, description } = product;
+  const { id, name, price, imageUrl, description, brand } = product;
   const addProductToCart = () => addItemToCart(product);
   return (
     <Card className="ecommerce-card" key={id}>
@@ -19,20 +19,9 @@ const Product = ({ product }) => {
       </div>
       <CardBody>
         <div className="item-wrapper">
-          {/* <div className="item-rating">
-                  <ul className="unstyled-list list-inline">
-                    {new Array(5).fill().map((listItem, index) => {
-                      return (
-                        <li key={index} className="ratings-list-item me-25">
-                          <Star />
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div> */}
         </div>
         <h6 className="item-name">
-          <Link className="text-body" to={`/apps/ecommerce/product-detail/`}>
+          <Link className="text-body" to={`/product/${id}`}>
             {name}
           </Link>
           <CardText tag="span" className="item-company">
@@ -42,7 +31,7 @@ const Product = ({ product }) => {
               href="/"
               onClick={(e) => e.preventDefault()}
             >
-              kjj
+              {brand}
             </a>
           </CardText>
         </h6>
