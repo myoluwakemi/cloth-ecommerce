@@ -49,7 +49,7 @@ const Product = ({ product }) => {
         </div>
 
         <div onClick={addProductToCart} className="btn-cart">
-          <ShoppingCart className="me-50" size={14} />
+          <ShoppingCart className="me-50 cart-svg" size={14} />
         </div>
       </div>
     </Card>

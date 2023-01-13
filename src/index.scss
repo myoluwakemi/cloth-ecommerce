@@ -29,6 +29,7 @@ a {
 .wrapper {
   backface-visibility: hidden;
 }
+
 .is-invalid {
   border-color: red !important;
 }
@@ -44,7 +45,6 @@ a {
 .form-check-input:checked {
   background: linear-gradient(to right, #614385, #516395) !important;
   border-color: #fff !important;
-
 }
 .btn-primary {
   background: linear-gradient(to right, #614385, #516395) !important;
@@ -61,11 +61,9 @@ a {
   display: flex;
 }
 
-
 .form-control:focus {
-  border-color: none !important; 
+  border-color: none !important;
   box-shadow: unset !important;
-  
 }
 
 .content-body {
@@ -467,16 +465,6 @@ a {
   }
 }
 
-// for checkout-items and options
-// Remove padding from stepper header & content area
-.checkout-tab-steps {
-  .bs-stepper-header,
-  .bs-stepper-content {
-    padding: 0;
-    margin: 0;
-  }
-}
-
 // Checkout items list
 .checkout-items {
   .ecommerce-card {
@@ -717,21 +705,32 @@ a {
     background: $back;
     color: $text;
   }
+    .list-view .ecommerce-card .card-body{
+      border-color: $borderColor;
+    }
+
+  
   a {
     color: $text !important;
   }
+  svg {
+    &:not(.cart-svg) {
+      color: $text;
+    }
+  }
+
   .product-detail {
     color: $text;
   }
   .form-control {
     border: 1px solid $borderColor;
-   background-color: $back;
-    color: $text;
-  }
-   .form-control:focus{
     background-color: $back;
     color: $text;
-   }
+  }
+  .form-control:focus {
+    background-color: $back;
+    color: $text;
+  }
   input:-webkit-autofill,
   .textarea:-webkit-autofill,
   .select:-webkit-autofill {

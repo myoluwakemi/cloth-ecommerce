@@ -108,7 +108,7 @@ const ProductDetails = () => {
             className="btn-cart me-0 me-sm-1 mb-1 mb-sm-0"
             color="primary"
           >
-            <ShoppingCart className="me-50" size={14} />
+            <ShoppingCart className="me-50 cart-svg" size={14} />
           </Button>
           <Button
             className="btn-wishlist me-0 me-sm-1 mb-1 mb-sm-0"

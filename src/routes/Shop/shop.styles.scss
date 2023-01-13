@@ -13,7 +13,7 @@
 .ecommerce-header {
   .search-results {
     font-size: 14px;
-    color: #ccc;
+    
   }
 }
 @include themed {
@@ -26,15 +26,7 @@
     .btn.show {
       border: 0.5px solid $text;
     }
-    .grid-view-btn {
-      svg {
-        color: $text;
-      }
-    }
-    .list-view-btn {
-      svg {
-        color: $text;
-      }
-    }
+  
+   
   }
 }
