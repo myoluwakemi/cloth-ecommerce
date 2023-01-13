@@ -51,6 +51,9 @@ a {
 
   border-radius: 0.357rem;
 }
+.unstyled-list{
+  display: flex;
+}
 
 .form-control:focus {
   background-color: #fff;
@@ -60,6 +63,19 @@ a {
 
 .content-body {
   position: relative;
+}
+.product-detail{
+  padding: 2rem 0.1rem;
+  .dropdown-toggle{
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-menu{
+    min-width: 3rem;
+    box-shadow: 0 5px 25px rgb(34 41 47 / 10%);
+    border: none;
+    
+  }
 }
 
   .filter-heading {
@@ -707,6 +723,9 @@ a {
   }
   a{
     color: $text !important;
+  }
+  .product-detail{
+    color: $text;
   }
   .form-control {
     border: 1px solid $borderColor;

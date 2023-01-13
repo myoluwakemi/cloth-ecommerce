@@ -1,62 +1,193 @@
-
-
 [
-    {
-      "id": 1,
-      "name": "Brown Brim",
-      "imageUrl": "../assets/eCommerce/2.png",
-      "description":
-        "After thousands of samples of palm data, we designed this ergonomic mouse. The laptop mouse has a streamlined arc and thumb rest to help reduce the stress caused by prolonged use of the laptop mouse.",
-      "price": 25
-    },
-    {
-      "id": 2,
-      "name": "Blue Beanie",
-      "imageUrl": "../assets/eCommerce/1.png",
-      "price": 18
-     
-    },
+  {
+    "id": 1,
+    "name": "VicTsing Wireless Mouse",
+    "imageUrl": "../assets/eCommerce/27.png",
+    "description": "After thousands of samples of palm data, we designed this ergonomic mouse. The laptop mouse has a streamlined arc and thumb rest to help reduce the stress caused by prolonged use of the laptop mouse.",
+    "price": 10.99,
+    "brand": "VicTsing",
+    "hasFreeShipping": true,
+    "rating": 2
+  },
+  {
+    "id": 2,
+    "name": "Bose Frames Tenor - Rectangular ",
+    "imageUrl": "../assets/eCommerce/26.png",
+    "description": "Redesigned for luxury — Thoughtfully refined and strikingly elegant, the latest Bose sunglasses blend enhanced features and designs for an elevated way to listen",
+    "price": 249.5,
+    "brand": "Bose",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
 
-    {
-      "id": 3,
-      "name": "Brown Cowboy",
-      "imageUrl": "../assets/eCommerce/3.png",
-      "price": 35
-    },
-    {
-      "id": 4,
-      "name": "Grey Brim",
-      "imageUrl": "../assets/eCommerce/4.png",
-      "price": 25
-    },
-    {
-      "id": 5,
-      "name": "Green Beanie",
-      "imageUrl": "../assets/eCommerce/5.png",
-      "price": 18
-    },
-    {
-      "id": 6,
-      "name": "Palm Tree Cap",
-      "imageUrl": "../assets/eCommerce/7.png",
-      "price": 14
-    },
-    {
-      "id": 7,
-      "name": "Red Beanie",
-      "imageUrl": "../assets/eCommerce/6.png",
-      "price": 18
-    },
-    {
-      "id": 8,
-      "name": "Wolf Cap",
-      "imageUrl": "../assets/eCommerce/8.png",
-      "price": 14
-    },
-    {
-      "id": 9,
-      "name": "Blue Snapback",
-      "imageUrl": "https://i.ibb.co/X2VJP2W/blue-snapback.png",
-      "price": 16
-    }
-  ]
+  {
+    "id": 3,
+    "name": "Willful Smart Watch for Men Women 2020, ",
+    "imageUrl": "../assets/eCommerce/25.png",
+    "description": "Are you looking for a smart watch, which can not only easily keep tracking of your steps, calories, heart rate and sleep quality, but also keep you informed of incoming calls.",
+    "price": 2200.5,
+    "brand": "Willful",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "name": "Ronyes Unisex College Bag Bookbags for Women",
+    "imageUrl": "../assets/eCommerce/24.png",
+    "description": "Made of high quality water-resistant material; padded and adjustable shoulder straps; external USB with built-in charging cable offers a convenient charging",
+    "price": 220.5,
+    "brand": "Ronyes",
+    "hasFreeShipping": false,
+    "rating": 2
+  },
+  {
+    "id": 5,
+    "name": "Toshiba Canvio Advance 2TB Portable External Hard Drive",
+    "imageUrl": "../assets/eCommerce/23.png",
+    "description": "Up to 3TB of storage capacity to store your growing files and content",
+    "price": 98.9,
+    "brand": "Toshiba",
+    "hasFreeShipping": false,
+    "rating": 2
+  },
+  {
+    "id": 6,
+    "name": "Tile Pro - High Performance Bluetooth Tracker",
+    "imageUrl": "../assets/eCommerce/22.png",
+    "description": "FIND KEYS, BAGS & MORE -- Pro is our high-performance finder ideal for keys, backpacks, luggage or any other items you want to keep track of. The easy-to-use finder and free app work with iOS and Android.",
+    "price": 29.9,
+    "brand": "Tile",
+    "hasFreeShipping": false,
+    "rating": 4
+  },
+  {
+    "id": 7,
+    "name": "Bugani M90 Portable Bluetooth Speaker",
+    "imageUrl": "../assets/eCommerce/21.png",
+    "description": "Bluetooth Speakers-The M90 Bluetooth speaker uses the latest Bluetooth 5.0 technology and the latest Bluetooth ATS chip, Connecting over Bluetooth in seconds to iPhone, iPad, Smart-phones, Tablets, Windows, and other Bluetooth devices.",
+    "price": 56.9,
+    "brand": "Bugani",
+    "hasFreeShipping": false,
+    "rating": 3
+  },
+  {
+    "id": 8,
+    "name": "PlayStation 4 Console",
+    "imageUrl": "../assets/eCommerce/20.png",
+    "description": "All the greatest, games, TV, music and more. Connect with your friends to broadcast and celebrate your epic moments at the press of the Share button to Twitch, YouTube, Facebook and Twitter.",
+    "price": 678.9,
+    "brand": "Sony",
+    "hasFreeShipping": true,
+    "rating": 1
+  },
+  {
+    "id": 9,
+    "name": "Giotto 32oz Leakproof BPA Free Drinking Water",
+    "imageUrl": "../assets/eCommerce/19.png",
+    "description": "With unique inspirational quote and time markers on it,this water bottle is great for measuring your daily intake of water,reminding you stay hydrated and drink enough water throughout the day.A must have for any fitness goals including weight loss,appetite control and overall health..",
+    "price": 67.9,
+    "brand": "3M",
+    "hasFreeShipping": true,
+    "rating": 5
+  },
+  {
+    "id": 10,
+    "name": "Oculus Quest All-in-one VR",
+    "imageUrl": "../assets/eCommerce/18.png",
+    "description": "All-in-one VR: No PC. No wires. No limits. Oculus quest is an all-in-one gaming system built for virtual reality. Now you can play almost anywhere with just a VR headset and controllers. Oculus touch controllers: arm yourself with the award-winning Oculus touch controllers. Your slashes, throws and grab appear in VR with intuitive, realistic Precision, transporting your hands and gestures right into the game.",
+    "price": 789.0,
+    "brand": "Oculus",
+    "hasFreeShipping": true,
+    "rating": 5
+  },
+  {
+    "id": 11,
+    "name": "Handbags for Women Large Designer bag",
+    "imageUrl": "../assets/eCommerce/17.png",
+    "description": "Classic Hobo Purse: Top zipper closure, with 2 side zipper pockets design and elegant tassels decoration, fashionable and practical handbags for women, perfect for shopping, dating, travel and business",
+    "price": 789.0,
+    "brand": "Hobo",
+    "hasFreeShipping": false,
+    "rating": 3
+  },
+  {
+    "id": 12,
+    "name": "Adidas Mens Tech Response Shoes",
+    "imageUrl": "../assets/eCommerce/16.png",
+    "description": "Comfort + performance.  Designed with materials that are durable, lightweight and extremely comfortable. Core performance delivers the perfect mix of fit, style and all-around performance.",
+    "price": 69.0,
+    "brand": "Adidas",
+    "hasFreeShipping": false,
+    "rating": 3
+  },
+  {
+    "id": 13,
+    "name": "Laptop Bag",
+    "imageUrl": "../assets/eCommerce/15.png",
+    "description": "TSA FRIENDLY- A separate DIGI SMART compartment can hold 15.6 inch Laptop as well as 15 inch, 14 inch Macbook, 12.9 inch iPad, and tech accessories like charger for quick TSA checkpoint when traveling.",
+    "price": 29.99,
+    "brand": "TAS",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+  {
+    "id": 14,
+    "name": "Wireless Charger 5W Max",
+    "imageUrl": "../assets/eCommerce/14.png",
+    "description": "Charge with case: transmits charging power directly through protective cases. Rubber/plastic/TPU cases under 5 mm thickness . Do not use any magnetic and metal attachments or cards, or it will prevent charging.",
+    "price": 8.99,
+    "brand": "3M",
+    "hasFreeShipping": false,
+    "rating": 1
+  },
+  {
+    "id": 15,
+    "name": "Vankyo leisure 3 mini projector",
+    "imageUrl": "../assets/eCommerce/13.png",
+    "description": "SUPERIOR VIEWING EXPERIENCE: Supporting 1920x1080 resolution, VANKYO Leisure 3 projector is powered by MStar Advanced Color Engine, which is ideal for home entertainment. 2020 upgraded LED lighting provides a superior viewing experience for you..",
+    "price": 99.99,
+    "brand": "Vankyo Stor",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+  {
+    "id": 16,
+    "name": "New Apple iPad Pro",
+    "imageUrl": "../assets/eCommerce/12.png",
+    "description": "Up to 10 hours of surﬁng the web on Wi‑Fi, watching video, or listening to music. Up to 9 hours of surﬁng the web using cellular data network, Compatible with Smart Keyboard Folio and Bluetooth keyboards.",
+    "price": 99.99,
+    "brand": "Apple",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+  {
+    "id": 17,
+    "name": "Nike Air Max",
+    "imageUrl": "../assets/eCommerce/11.png",
+    "description": "With a bold application of colorblocking inspired by modern art styles, the Nike Air Max 270 React sneaker is constructed with layers of lightweight material to achieve its artful look and comfortable feel.",
+    "price": 78.99,
+    "brand": "Nike",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+  {
+    "id": 18,
+    "name": "Logitech K380 Wireless Keyboard",
+    "imageUrl": "../assets/eCommerce/10.png",
+    "description": "Logitech K380 Bluetooth Wireless Keyboard gives you the comfort and convenience of desktop typing on your smartphone, and tablet. It is a wireless keyboard that connects to all Bluetooth wireless devices that support external keyboards. Take this compact, lightweight, Bluetooth keyboard anywhere in your home. Type wherever you like, on any compatible computer, phone or tablet.",
+    "price": 81.99,
+    "brand": "Logitech",
+    "hasFreeShipping": false,
+    "rating": 5
+  },
+   {
+    "id": 19,
+    "name": "OnePlus 7 Pro",
+    "imageUrl": "../assets/eCommerce/9.png",
+    "description": "The OnePlus 7 Pro features a brand new design, with a glass back and front and curved sides. The phone feels very premium",
+    "price": 41.99,
+    "brand": "Philips",
+    "hasFreeShipping": false,
+    "rating": 4
+  }
+]
