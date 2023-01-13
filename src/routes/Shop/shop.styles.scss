@@ -1,3 +1,4 @@
+@import "../../assests/scss/theme-variables.scss";
 .products-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -9,4 +10,31 @@
   display: flex !important;
   justify-content: center;
 }
-
+.ecommerce-header {
+  .search-results {
+    font-size: 14px;
+    color: #ccc;
+  }
+}
+@include themed {
+  .ecommerce-header {
+    color: $text !important;
+    .btn-check:checked + .btn,
+    :not(.btn-check) + .btn:active,
+    .btn:first-child:active,
+    .btn.active,
+    .btn.show {
+      border: 0.5px solid $text;
+    }
+    .grid-view-btn {
+      svg {
+        color: $text;
+      }
+    }
+    .list-view-btn {
+      svg {
+        color: $text;
+      }
+    }
+  }
+}
