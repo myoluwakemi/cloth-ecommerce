@@ -13,7 +13,8 @@ const ProductDetails = () => {
    console.log(id, det, productt)
 
     return <div>
-      <h3>{productt.name}</h3>
+      {productt.name}
+      
     </div>
 }
 export default ProductDetails;
