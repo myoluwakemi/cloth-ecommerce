@@ -6,13 +6,14 @@ import { ProductContext } from "../../contexts/product.context";
 const ProductDetails = () => {
    const {product} = useContext(ProductContext)
    const {id} = useParams();
-   const det = product.find((prod)=> {
-      return prod.id = +id
+   const det = product.findIndex((prod)=> {
+      return +prod.id == +id
    })
-   console.log(id, det)
+   const productt = product[det]
+   console.log(id, det, productt)
 
     return <div>
-      edhgh
+      <h3>{productt.name}</h3>
     </div>
 }
 export default ProductDetails;

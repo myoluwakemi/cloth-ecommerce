@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   const { id, name, price, imageUrl, description } = product;
   const addProductToCart = () => addItemToCart(product);
   return (
-    <Card className="ecommerce-card" key={product.id}>
+    <Card className="ecommerce-card" key={id}>
       <div className="item-img text-center mx-auto">
         <Link to={`/product/${id}`}>
           <img className="img-fluid card-img-top" src={imageUrl} alt={name} />
@@ -75,8 +75,8 @@ const ProductCard = ({ products, activeView }) => {
         "list-view": activeView === "list",
       })}
     >
-      {products.map(( product) => (
-        <Product product={product} />
+      {products.map(( product,index) => (
+        <Product key={index} product={product} />
       ))}
     </div>
   );
