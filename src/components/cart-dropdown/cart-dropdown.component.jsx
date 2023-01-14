@@ -16,6 +16,10 @@ const CartDropdown = () => {
   };
   return (
     <div className="cart-dropdown-container">
+      <div className="sidebar-header cart-header">
+        <span>My cart</span>
+         <span>{cartItems.length} <span>item{cartItems.length > 1 ?'s': ''}</span></span>
+      </div>
       <div className="cart-items">
         {cartItems.length ? (cartItems.map((item) => (
           <CartItem key={item.id} cartItem={item} />
