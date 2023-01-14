@@ -273,6 +273,14 @@ a {
   .ecommerce-card {
     margin-bottom: 1.5rem;
     border-radius: 16px;
+    .item-img {
+      position: relative;
+      .wish {
+        position: absolute;
+        right: 7%;
+        top: 5%;
+      }
+    }
   }
 }
 
@@ -514,17 +522,17 @@ a {
     input {
       border: none;
       padding-left: 0;
-      // color: $body-color;
       font-weight: 600;
 
       &::placeholder {
-        // color: $body-color;
         font-weight: 600;
       }
     }
 
     .input-group-text {
       height: auto;
+      padding: 0.3rem 0.5rem !important;
+      font-size: 14px;
       font-weight: 600;
       padding: inherit;
     }
@@ -705,11 +713,10 @@ a {
     background: $back;
     color: $text;
   }
-    .list-view .ecommerce-card .card-body{
-      border-color: $borderColor;
-    }
+  .list-view .ecommerce-card .card-body {
+    border-color: $borderColor;
+  }
 
-  
   a {
     color: $text !important;
   }

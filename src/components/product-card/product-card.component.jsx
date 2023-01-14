@@ -16,6 +16,9 @@ const Product = ({ product }) => {
         <Link to={`/product/${id}`}>
           <img className="img-fluid card-img-top" src={imageUrl} alt={name} />
         </Link>
+        <div className="wish">
+          <Heart size={14}/>
+        </div>
       </div>
       <CardBody>
         <div className="item-wrapper">
