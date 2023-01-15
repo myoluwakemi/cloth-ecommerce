@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useContext } from "react";
+import { CartContext } from "../../contexts/cart.content";
 
 import { ProductContext } from "../../contexts/product.context";
 // ** Third Party Components
@@ -31,11 +32,18 @@ import "./styles.scss"
 
 const ProductDetails = () => {
   const { product } = useContext(ProductContext);
+  const { addItemToCart} = useContext(CartContext)
   const { id } = useParams();
   const det = product.findIndex((prod) => {
     return +prod.id === +id;
   });
+  
   const productt = product[det];
+  
+
+  const addToCartHandler = () => {
+   addItemToCart(productt)
+  }
   
 
   return (
@@ -107,6 +115,7 @@ const ProductDetails = () => {
           <Button
             className="btn-cart me-0 me-sm-1 mb-1 mb-sm-0"
             color="primary"
+            onClick={addToCartHandler }
           >
             <ShoppingCart className="me-50 cart-svg" size={14} />
           </Button>

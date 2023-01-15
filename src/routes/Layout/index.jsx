@@ -53,7 +53,7 @@ const Layout = () => {
               <ShoppingBag className="nav-icon" />
               <span>shop</span>
             </Link>
-            <Link className="nav-link" to="shop">
+            <Link className="nav-link" to="wishlist">
               <Heart className="nav-icon" />
               <span>wishlist</span>
             </Link>

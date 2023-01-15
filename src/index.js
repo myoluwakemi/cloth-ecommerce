@@ -13,6 +13,7 @@ import "./assests/scss/main.scss";
 import "./assests/scss/sidebar.scss";
 import reportWebVitals from "./reportWebVitals";
 import { SearchProvider } from "./contexts/search-context";
+import { WishContextProvider } from "./contexts/wish.context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,9 +22,11 @@ root.render(
       <UserProvider>
         <ProductProvider>
           <CartProvider>
+            <WishContextProvider>
             <SearchProvider>
               <App />
             </SearchProvider>
+            </WishContextProvider>
           </CartProvider>
         </ProductProvider>
       </UserProvider>

@@ -8,6 +8,7 @@ import CheckOut from "./routes/checkout/checkout.component";
 import Login from "./routes/Login";
 import Register from "./routes/Register";
 import ProductDetails from "./routes/productDetails";
+import WishList from "./routes/WishList";
 
 const App = () => {
   const isBrowserDefaulDark = () =>
@@ -27,6 +28,8 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="shop" element={<Shop />} />
+             <Route path="wishlist" element={<WishList />} />
+
 
             <Route path="checkout" element={<CheckOut />} />
             <Route path="product/:id" exact element={<ProductDetails />} />
