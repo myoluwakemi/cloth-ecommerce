@@ -724,7 +724,12 @@ a {
       color: $text;
     }
   }
+  .dropdown-menu.show{
+    background: $back;
+  }
 
+   
+  
   .product-detail {
     color: $text;
   }
