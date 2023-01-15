@@ -2,13 +2,11 @@
 * {
   box-sizing: border-box;
 }
-html {
-  height: 100%;
-}
+html,
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  height: 100%;
   direction: ltr;
   font-family: "DM Sans", sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -28,6 +26,7 @@ a {
 }
 .wrapper {
   backface-visibility: hidden;
+  min-height: 100vh;
 }
 
 .is-invalid {

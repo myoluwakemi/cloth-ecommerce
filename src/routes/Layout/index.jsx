@@ -1,5 +1,5 @@
 import { Fragment, useContext, useState } from "react";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { CartContext } from "../../contexts/cart.content";
 
@@ -18,7 +18,7 @@ import IntLDropdown from "./IntlDropDown";
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 
 const Layout = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const { currentUser } = useContext(UserContext);
   const { isCartOpen } = useContext(CartContext);
 
@@ -61,7 +61,7 @@ const Layout = () => {
             {currentUser ? (
               <div className="nav-link" onClick={handleSignOut}>
                 <UserCheck className="nav-icon" />
-                <span>SIGN OUT</span>
+                <span>Log out</span>
               </div>
             ) : (
               <div className="nav-link" onClick={gotoAuth}>
@@ -88,10 +88,10 @@ const Layout = () => {
             </div>
           </div>
           <div className="header-navbar-shadow"></div>
-          <main className="routes-wrapper">
+          <div className="routes-wrapper">
             {/* <h1>{t("Welcome")}</h1> */}
             <Outlet />
-          </main>
+          </div>
         </div>
       </div>
       <div className="">{isCartOpen && <CartDropdownn />}</div>

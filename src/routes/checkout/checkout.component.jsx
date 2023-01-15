@@ -95,7 +95,7 @@ const CheckOut = () => {
                 <div className="item-options text-center">
                   <div className="item-wrapper">
                     <div className="item-cost">
-                      <h4 className="item-price">${item.price * quantity}</h4>
+                      <h4 className="item-price">${price * quantity}</h4>
                       {item.hasFreeShipping ? (
                         <CardText className="shipping">
                           <Badge color="light-success" pill>

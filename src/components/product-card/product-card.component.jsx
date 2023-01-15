@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.content";
 import classnames from "classnames";
 import "./product-card.styles.scss";
-import { Card, CardBody, CardText, Button } from "reactstrap";
+import { Card, CardBody, CardText } from "reactstrap";
 import { Link } from "react-router-dom";
-import { Star, ShoppingCart, Heart } from "react-feather";
+import {  ShoppingCart, Heart } from "react-feather";
 
 const Product = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);

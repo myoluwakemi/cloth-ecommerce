@@ -44,7 +44,7 @@ const Register = () => {
       const { user } = await createAuthWithEmailandPassword(email, password);
 
 
-      const userDocRef = await createUserDocumentFromAuth(user, {
+      await createUserDocumentFromAuth(user, {
         displayName,
       });
       resetFormField();

@@ -17,7 +17,7 @@ const Shop = () => {
   const [activeView, setActiveView] = useState("grid");
   const [toggle, setToggle] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [postPerPage, setPostPerPage] = useState(12);
+  const [postPerPage] = useState(12);
 
   let filteredProducts;
   if (product) {

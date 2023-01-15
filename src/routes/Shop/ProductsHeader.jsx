@@ -16,11 +16,11 @@ import {
 const ProductHeader = ({activeView,setActiveView, setSidebarOpen, productTotal}) => {
    
 
-    const sortToggleText = {
-    'price-desc': 'Highest',
-    'price-asc': 'Lowest',
-    featured: 'Featured'
-  }
+  //   const sortToggleText = {
+  //   'price-desc': 'Highest',
+  //   'price-asc': 'Lowest',
+  //   featured: 'Featured'
+  // }
   return (
     <div className="ecommerce-header">
         <Row>

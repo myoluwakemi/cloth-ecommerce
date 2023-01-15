@@ -28,11 +28,11 @@ const MobileSidebar = ({ onClose, show }) => {
 
         <div>
           <div className="nav-links-container">
-            <Link className="nav-link" to="shop">
+            <Link onClick={onClose} className="nav-link" to="shop">
               <ShoppingBag className="nav-icon" />
               <span>shop</span>
             </Link>
-            <Link className="nav-link" to="shop">
+            <Link onClick={onClose}  className="nav-link" to="shop">
               <Heart className="nav-icon" />
               <span>wishlist</span>
             </Link>

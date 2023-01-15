@@ -33,10 +33,10 @@ const ProductDetails = () => {
   const { product } = useContext(ProductContext);
   const { id } = useParams();
   const det = product.findIndex((prod) => {
-    return +prod.id == +id;
+    return +prod.id === +id;
   });
   const productt = product[det];
-  console.log(id, det, productt);
+  
 
   return (
     <Row className="my-2 product-detail">
