@@ -11,9 +11,14 @@
   top: 0;
   z-index: 20;
   padding: 1.5rem 1rem;
+  
+}
+.logo-container {
+  text-decoration: none;
 }
 .nav-links-container {
   margin-top: 2rem;
+  
 
   .nav-link {
     display: flex;

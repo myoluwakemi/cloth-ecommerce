@@ -9,7 +9,6 @@ import { UserCheck, ShoppingBag, Menu, Sun, Moon, Heart } from "react-feather";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import { UserContext } from "../../contexts/user.context";
-import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
 import CartDropdownn from "../../components/cart-dropdown/cart-dropdown.component";
 
 import "./layout.scss";
@@ -47,7 +46,7 @@ const Layout = () => {
       <div className="wrapper">
         <div className="main-menu">
           <Link className="logo-container" to="/">
-            <CrwnLogo className="logo" />
+            <h3>Myk</h3>
           </Link>
           <div className="nav-links-container">
             <Link className="nav-link" to="shop">

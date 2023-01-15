@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link , useNavigate} from "react-router-dom";
 
 import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 
@@ -19,12 +19,14 @@ const defaultFormFields = {
 
 
 const Login = () => {
+  const nagivate = useNavigate()
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
 
   //reseting input fields
   const resetFormFields = () => {
     setFormFields(defaultFormFields)
+    console.log('hee')
   }
 
   //track the changes in the input field
@@ -37,7 +39,9 @@ const Login = () => {
     e.preventDefault();
     try{
      await signInAuthUserWithEmailAndPassword(email, password);
-      resetFormFields();
+     nagivate('/shop')
+     console.log('HRER')
+     resetFormFields();
     }catch(error){
       switch (error.code) {
         case 'auth/wrong-password':
@@ -54,7 +58,7 @@ const Login = () => {
 
   return (
     <AuthWrapper
-      title="Welcome to ecommerce! 👋"
+      title="Welcome to Myk shop! 👋"
       subText="Please sign-in to your account and start the adventure"
       acctStatus="New on our platform?"
       acctToCreate="Create an account"

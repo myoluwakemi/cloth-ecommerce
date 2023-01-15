@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { signInWithGooglePopup } from "../../utils/firebase/firebase.utils";
 
@@ -17,9 +17,12 @@ import { Mail } from "react-feather";
 
 const AuthWrapper= ({title, subText, children, acctStatus, acctToCreate}) => {
 
+  const naviagate = useNavigate()
+
   const signInWithGoogle = async (e) => {
     e.preventDefault()
     await signInWithGooglePopup()
+    naviagate('/shop')
   }
   return (
     <div className="wrapper">
@@ -27,8 +30,8 @@ const AuthWrapper= ({title, subText, children, acctStatus, acctToCreate}) => {
         <div className="auth-inner my-2">
           <Card className="auth-card mb-0">
             <CardBody>
-              <Link className="text-center logo" to="/">
-                LOGO
+              <Link className="text-center logo-container logo" to="/">
+                <h3>Myk</h3>
               </Link>
               <CardTitle className="card-title">{title}</CardTitle>
               <CardText className="card-text">
