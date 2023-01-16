@@ -6,10 +6,7 @@ import {
   Col,
   Button,
   ButtonGroup,
-  DropdownItem,
-  DropdownMenu,
-  DropdownToggle,
-  UncontrolledButtonDropdown,
+ 
 } from "reactstrap";
 
 
@@ -35,31 +32,7 @@ const ProductHeader = ({activeView,setActiveView, setSidebarOpen, productTotal})
               <span  className='search-results'> {productTotal} Results Found </span>
             </div>
             <div className='view-options d-flex'>
-              <UncontrolledButtonDropdown className='dropdown-sort'>
-                <DropdownToggle className='text-capitalize me-1' color='primary' outline caret>
-                 
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem
-                    className='w-100'
-                   
-                  >
-                    Featured
-                  </DropdownItem>
-                  <DropdownItem
-                    className='w-100'
-                   
-                  >
-                    Lowest
-                  </DropdownItem>
-                  <DropdownItem
-                    className='w-100'
-                
-                  >
-                    Highest
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledButtonDropdown>
+            
               <ButtonGroup>
                 <Button
                   tag='label'
