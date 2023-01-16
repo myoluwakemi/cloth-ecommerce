@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { UserContext } from "../../contexts/user.context";
 import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
@@ -7,6 +8,7 @@ import { X, ShoppingBag, UserCheck, Heart } from "react-feather";
 import "./styles.scss";
 
 const MobileSidebar = ({ onClose, show }) => {
+  const {t} = useTranslation()
   const navigate = useNavigate();
   const { currentUser } = useContext(UserContext);
   const handleSignOut = () => {
@@ -20,7 +22,7 @@ const MobileSidebar = ({ onClose, show }) => {
     <div className={`mobile-sidebarwrapper ${show === true ? "active" : ""}`}>
       <div className="sidebar">
         <div className="sidebar-header">
-          <Link className="logo-container" to="/">
+          <Link onClick={onClose} className="logo-container" to="/">
             <CrwnLogo className="logo" />
           </Link>
           <X onClick={onClose} className="toggle-icon" />
@@ -30,21 +32,21 @@ const MobileSidebar = ({ onClose, show }) => {
           <div className="nav-links-container">
             <Link onClick={onClose} className="nav-link" to="shop">
               <ShoppingBag className="nav-icon" />
-              <span>shop</span>
+              <span>{t('shop')}</span>
             </Link>
             <Link onClick={onClose}  className="nav-link" to="shop">
               <Heart className="nav-icon" />
-              <span>wishlist</span>
+              <span>{t('wishlist')}</span>
             </Link>
             {currentUser ? (
               <div className="nav-link" onClick={handleSignOut}>
                 <UserCheck className="nav-icon" />
-                <span>SIGN OUT</span>
+                <span>{t('Logout')}</span>
               </div>
             ) : (
               <div className="nav-link" onClick={gotoAuth}>
                 <UserCheck className="nav-icon" />
-                <span>Sign in</span>
+                <span>{t('Sign in')}</span>
               </div>
             )}
           </div>
