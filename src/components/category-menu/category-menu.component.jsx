@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import "./category-menu.component.scss";
 import CategoryItem from "../category/category-item.component";
@@ -8,6 +9,7 @@ const CategoryMenu = ({ directory }) => {
   const gotoShop =()=> {
     naviagate('/shop')
   }
+   const {t} = useTranslation()
   return (
     <div className="categories-container">
       {directory.map((category) => (
@@ -15,12 +17,12 @@ const CategoryMenu = ({ directory }) => {
       ))}
       <div className="banner">
         <div className="inner-banner">
-          <h2>New Collections</h2>
+          <h2>{t('New Collections')}</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate
             suscip
           </p>
-          <Button onClick={gotoShop} color="primary">Shop</Button>
+          <Button className="banner-btn" onClick={gotoShop} color="primary">{t('shop')}</Button>
         </div>
       </div>
     </div>

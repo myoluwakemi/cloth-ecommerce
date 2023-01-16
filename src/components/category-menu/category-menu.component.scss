@@ -16,7 +16,7 @@
   }
   .banner {
     position: absolute;
-    z-index: 12;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +30,10 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
+      text-transform: capitalize;
+      .banner-btn{
+        text-transform: capitalize;
+      }
     }
   }
 }
