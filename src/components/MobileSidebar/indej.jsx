@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { UserContext } from "../../contexts/user.context";
-import { ReactComponent as CrwnLogo } from "../../assests/crown.svg";
+
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import { X, ShoppingBag, UserCheck, Heart } from "react-feather";
 import "./styles.scss";
@@ -23,7 +23,7 @@ const MobileSidebar = ({ onClose, show }) => {
       <div className="sidebar">
         <div className="sidebar-header">
           <Link onClick={onClose} className="logo-container" to="/">
-            <CrwnLogo className="logo" />
+            <h3>Myk</h3>
           </Link>
           <X onClick={onClose} className="toggle-icon" />
         </div>
@@ -34,7 +34,7 @@ const MobileSidebar = ({ onClose, show }) => {
               <ShoppingBag className="nav-icon" />
               <span>{t('shop')}</span>
             </Link>
-            <Link onClick={onClose}  className="nav-link" to="shop">
+            <Link onClick={onClose}  className="nav-link" to="wishlist">
               <Heart className="nav-icon" />
               <span>{t('wishlist')}</span>
             </Link>
