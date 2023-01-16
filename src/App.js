@@ -1,14 +1,27 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import { ThemeContext } from "./contexts/theme-context";
 import { Route, Routes } from "react-router-dom";
-import Home from "./routes/home/home.component";
-import Layout from "./routes/Layout";
-import Shop from "./routes/Shop/shop.component";
-import CheckOut from "./routes/checkout/checkout.component";
-import Login from "./routes/Login";
-import Register from "./routes/Register";
-import ProductDetails from "./routes/productDetails";
-import WishList from "./routes/WishList";
+// import Home from "./routes/home/home.component";
+// import Layout from "./routes/Layout";
+// import Shop from "./routes/Shop/shop.component";
+// import CheckOut from "./routes/checkout/checkout.component";
+// import Login from "./routes/Login";
+// import Register from "./routes/Register";
+// import ProductDetails from "./routes/productDetails";
+// import WishList from "./routes/WishList";
+
+
+const Home = lazy(()=> import('./routes/home/home.component'))
+const Shop = lazy(()=> import('./routes/Shop/shop.component'))
+const CheckOut = lazy(()=> import('./routes/checkout/checkout.component'))
+const WishList = lazy(()=> import('./routes/WishList'))
+const Login = lazy(()=> import('./routes/Login'))
+const Register = lazy(()=> import('./routes/Register'))
+const Layout =  lazy(()=> import('./routes/Layout'))
+const ProductDetails =  lazy(()=> import('./routes/productDetails'))
+
+
+
 
 const App = () => {
   const isBrowserDefaulDark = () =>
@@ -22,6 +35,7 @@ const App = () => {
 
   const [theme, setTheme] = useState(getDefaultTheme());
   return (
+    <Suspense fallback={<div>loading</div>}>
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={`theme-${theme}`}>
         <Routes>
@@ -41,6 +55,7 @@ const App = () => {
         </Routes>
       </div>
     </ThemeContext.Provider>
+    </Suspense>
   );
 };
 
