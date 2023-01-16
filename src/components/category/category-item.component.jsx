@@ -1,17 +1,15 @@
-import './category-item.component.scss'
+import "./category-item.component.scss";
 
+const CategoryItem = ({ category }) => {
+  const { imageUrl } = category;
 
-const CategoryItem = ({category})=> {
-    const {imageUrl, title} = category
-
-    return (
-        <div className="category-container">
-        <div className="background-image " style={{backgroundImage : `url(${imageUrl})`}} />
-        <div className="category-body-container ">
-          <h2>{title}</h2>
-          <p>shop now</p>
-        </div>
-      </div>
-    )
-}
-export default CategoryItem
+  return (
+    <div className="category-container">
+      <div
+        className="background-image "
+        style={{ backgroundImage: `url(${imageUrl})` }}
+      />
+    </div>
+  );
+};
+export default CategoryItem;

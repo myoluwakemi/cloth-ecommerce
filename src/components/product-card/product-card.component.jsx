@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "../../contexts/cart.content";
 import { WishContext } from "../../contexts/wish.context";
 import classnames from "classnames";
@@ -10,9 +10,17 @@ import {  ShoppingCart, Heart } from "react-feather";
 const Product = ({ product }) => {
   const { addItemToCart } = useContext(CartContext);
   const {  addToWishList} = useContext(WishContext)
+  const [isInWishList, setIsInWishList] = useState(false)
   const { id, name, price, imageUrl, description, brand } = product;
   const addProductToCart = () => addItemToCart(product);
-  
+
+   const addProductWishList = () =>{
+    addToWishList(product);
+    setIsInWishList(!isInWishList)
+   } 
+
+
+
 
   return (
     <Card className="ecommerce-card" key={id}>
@@ -20,8 +28,9 @@ const Product = ({ product }) => {
         <Link to={`/product/${id}`}>
           <img className="img-fluid card-img-top" src={imageUrl} alt={name} />
         </Link>
-        <div onClick={() => addToWishList(product) } className="wish">
-          <Heart size={14}/>
+        <div className="wish">
+          {isInWishList?  <Heart className="wish-added" size={14}></Heart>:<Heart onClick={ addProductWishList} size={14}/>}
+         
         </div>
       </div>
       <CardBody>

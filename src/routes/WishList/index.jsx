@@ -1,18 +1,17 @@
-import { Fragment, useContext } from "react";
+import {  useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../contexts/cart.content";
 import { WishContext } from "../../contexts/wish.context";
 import { Card, CardBody, CardText } from "reactstrap";
-import { ShoppingCart } from "react-feather";
+import { ShoppingCart, Heart } from "react-feather";
 
 const WishList = () => {
   const { wishList } = useContext(WishContext);
   const { addItemToCart } = useContext(CartContext);
-  console.log(wishList);
-
+ 
   return (
     <div className="grid-view">
-      {wishList.map((wishItem) => (
+        {wishList.length?  (wishList.map((wishItem) => (
         <Card className="ecommerce-card" key={wishItem.id}>
           <div className="item-img text-center mx-auto">
             <Link to={`/product/${wishItem.id}`}>
@@ -22,6 +21,10 @@ const WishList = () => {
                 alt={wishItem.name}
               />
             </Link>
+              <div className="wish">
+         <Heart className="wish-added" size={14}></Heart>
+         
+        </div>
           </div>
           <CardBody>
             <div className="item-wrapper"></div>
@@ -60,7 +63,9 @@ const WishList = () => {
             </div>
           </div>
         </Card>
-      ))}
+      ))): <div className="empty-product-state">You wish list is empty</div>}
+        
+     
     </div>
   );
 };
