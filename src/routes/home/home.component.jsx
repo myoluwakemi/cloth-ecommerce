@@ -3,33 +3,34 @@ const directory = [
   {
     id: 1,
     title: "hats",
-    imageUrl: "https://i.ibb.co/cvpntL1/hats.png"
+    imageUrl: "../assets/eCommerce/11.png"
   },
   {
     id: 2,
     title: "jackets",
-    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png"
+    imageUrl:  "../assets/eCommerce/banner-12.jpg"
   },
   {
     id: 3,
     title: "sneakers",
-    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png"
+    imageUrl: "../assets/eCommerce/17.png"
   },
   {
     id: 4,
     title: "womens",
     imageUrl: "https://i.ibb.co/GCCdy8t/womens.png"
   },
-  {
+   {
     id: 5,
-    title: "mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png"
+    title: 'gadgets',
+    imageUrl: "../assets/eCommerce/2.png"
   },
   {
     id: 6,
-    title: 'gadgets',
-    imageUrl: "../assets/eCommerce/2.png"
-  }
+    title: "mens",
+    imageUrl: "https://i.ibb.co/R70vBrQ/men.png"
+  },
+ 
   
 ];
 
