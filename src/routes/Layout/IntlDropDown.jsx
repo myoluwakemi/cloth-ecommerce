@@ -33,6 +33,7 @@ const IntLDropdown = () => {
       >
         <ReactCountryFlag
           svg
+          alt={i18n.language}
           className="country-flag flag-icon"
           countryCode={i18n.language === "en" ? "us" : i18n.language}
         />
