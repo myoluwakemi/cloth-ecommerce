@@ -1,5 +1,7 @@
+@import '../../assests/scss/theme-variables.scss';
 .notFound-wrapper{
     padding: 2rem ;
+    height: 100vh;
     .text-color{
         color: #fff !important;
     }
@@ -10,5 +12,11 @@
            
         }
 
+    }
+}
+@include themed {
+    .notFound-wrapper{
+        background: $wrapper;
+        color: $text;
     }
 }
