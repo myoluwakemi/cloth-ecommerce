@@ -1,6 +1,7 @@
 import { useState, lazy, Suspense } from "react";
 import { ThemeContext } from "./contexts/theme-context";
 import { Route, Routes } from "react-router-dom";
+import Loader from "./components/Loader";
 
 
 const Home = lazy(() => import("./routes/home/home.component"));
@@ -25,7 +26,7 @@ const App = () => {
 
   const [theme, setTheme] = useState(getDefaultTheme());
   return (
-    <Suspense fallback={<div>loading</div>}>
+    <Suspense fallback={<Loader/>}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
         <div className={`theme-${theme}`}>
           <Routes>
@@ -42,7 +43,9 @@ const App = () => {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="/loading" element={<Loader />} />
           </Routes>
+
         </div>
       </ThemeContext.Provider>
     </Suspense>
