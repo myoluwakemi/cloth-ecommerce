@@ -5,6 +5,7 @@ import { WishContext } from "../../contexts/wish.context";
 import { Card, CardBody, CardText } from "reactstrap";
 import { ShoppingCart, Heart } from "react-feather";
 
+
 const WishList = () => {
   const { wishList } = useContext(WishContext);
   const { addItemToCart } = useContext(CartContext);
@@ -63,7 +64,8 @@ const WishList = () => {
             </div>
           </div>
         </Card>
-      ))): <div className="empty-product-state">You wish list is empty</div>}
+      ))): <div className="empty-product-state">You wish list is empty
+      </div>}
         
      
     </div>

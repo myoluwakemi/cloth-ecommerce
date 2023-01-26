@@ -127,7 +127,7 @@ const CheckOut = () => {
             );
           })
         ) : (
-          <div>Your cart is empty</div>
+          <div className="empty-product-state">Your cart is empty</div>
         )}
       </div>
       <div className="checkout-options">
